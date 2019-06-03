@@ -1,16 +1,21 @@
 @font-face {
-    font-family: 'open_sansregular';
-    src: url('/fonts/OpenSans-Regular-webfont.eot');
-    src: url('/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
-         url('/fonts/OpenSans-Regular-webfont.woff') format('woff'),
-         url('/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('/fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-family: 'Proxima Nova';
+
+	font-style: normal;
+  	font-weight: 400;
+  	color: pink;
+
+    src: url('/fonts/proxima-nova-alt-regular-webfont.eot');
+    src: url('/fonts/proxima-nova-alt-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/proxima-nova-alt-regular-webfont.woff2') format('woff2'),
+         url('/fonts/proxima-nova-alt-regular-webfont.woff') format('woff'),
+         url('/fonts/proxima-nova-alt-regular-webfont.ttf') format('truetype'),
+         url('/fonts/proxima-nova-alt-regular-webfont.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 
 body {
-  font-family: 'open_sansregular';
+    font-family: 'Proxima Nova', Georgia, sans-serif;
 }
