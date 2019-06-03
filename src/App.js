@@ -4,7 +4,7 @@ class App extends Component {
 
    	render() {
    		return(
-			<div>
+			<div className='container'>
 	    		<p>
 		    		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet enim tempus 
 		    		facilisis iaculis. Nam mi massa, consequat sit amet pharetra in, convallis at nibh. Fusce a 
