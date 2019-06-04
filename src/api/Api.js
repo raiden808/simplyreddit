@@ -17,7 +17,7 @@ class Api extends Component {
       (result) => {
         this.setState({
           isLoaded: true,
-          items: result.data
+          items: result.data.children
         });
       },
       // Note: it's important to handle errors here
@@ -32,15 +32,23 @@ class Api extends Component {
     )
   }
 
-   render() {
+  render() {
     const { error, isLoaded, items } = this.state;
 
-    console.log(items.children);
+    console.log(items);
+
+    const display_posts = items.map(
+      item =>{
+        return(
+          <li>{item.data.title}</li>
+        )
+      }
+    );
    
-      return (
-        <h2>test</h2>
-      );
-    }
+    return (
+      <ul>{display_posts}</ul>
+    );
+  }
 }
 
 export default Api
