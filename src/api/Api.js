@@ -10,8 +10,12 @@ class Api extends Component {
     };
   }
 
+  //http://www.reddit.com/r/nosleep/hot.json?count=5&after=t3_bwojax
+  //after = last thread marker
+  //count = the number of items already seen in this listing
+
   componentDidMount() {
-  fetch("http://www.reddit.com/r/all/hot.json?limit=15")
+  fetch("http://www.reddit.com/r/nosleep/hot.json?limit=10&count=5")
     .then(res => res.json())
     .then(
       (result) => {
@@ -40,7 +44,7 @@ class Api extends Component {
     const display_posts = items.map(
       item =>{
         return(
-          <li>{item.data.title}</li>
+          <li keyData={item.data.name} >{item.data.title}</li>
         )
       }
     );
