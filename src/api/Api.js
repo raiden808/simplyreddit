@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Pagination from '../controls/pagination'
 
 class Api extends Component {
    constructor(props) {
@@ -40,6 +41,7 @@ class Api extends Component {
     const { error, isLoaded, items } = this.state;
 
     console.log(items);
+    console.log(items.length-1)
 
     const display_posts = items.map(
       item =>{
@@ -50,7 +52,10 @@ class Api extends Component {
     );
    
     return (
-      <ul>{display_posts}</ul>
+      <div>
+        <ul>{display_posts}</ul>
+        <Pagination />
+      </div>
     );
   }
 }
