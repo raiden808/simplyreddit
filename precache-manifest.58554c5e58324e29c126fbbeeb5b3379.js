@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "16afc3348429cbc0f871de6bb38ceeec",
+    "revision": "bc9a10a54efb94a8a2f2945519c0e12d",
     "url": "/simplyreddit/index.html"
   },
   {
-    "revision": "e1775aca45a97ca9393a",
+    "revision": "681459025dd7a8bea2bb",
     "url": "/simplyreddit/static/css/main.096da2df.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/simplyreddit/static/js/2.d6a534e5.chunk.js"
   },
   {
-    "revision": "e1775aca45a97ca9393a",
-    "url": "/simplyreddit/static/js/main.750ae00f.chunk.js"
+    "revision": "681459025dd7a8bea2bb",
+    "url": "/simplyreddit/static/js/main.dff7e969.chunk.js"
   },
   {
     "revision": "63eed0a6be060f0c9c53",
