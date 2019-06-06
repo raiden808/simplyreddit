@@ -16,7 +16,7 @@ class Api extends Component {
   //count = the number of items already seen in this listing
 
   componentDidMount() {
-  fetch("http://www.reddit.com/r/nosleep/hot.json?limit=10&count=5")
+  fetch("https://www.reddit.com/r/nosleep/hot.json?limit=10&count=5")
     .then(res => res.json())
     .then(
       (result) => {
