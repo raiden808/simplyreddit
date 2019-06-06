@@ -11,7 +11,7 @@ class App extends React.Component {
     }
     fetchPosts = async (subreddit) => {
         // fetch posts for the provided subreddit, then save them to the state
-        const redditAPI = await fetch(`http://www.reddit.com/r/${subreddit}/hot.json?limit=10&count=5`);
+        const redditAPI = await fetch(`https://www.reddit.com/r/${subreddit}/hot.json?limit=10&count=5`);
         const returnedData = await redditAPI.json();
         return this.setState({ subreddit: returnedData });
     }
