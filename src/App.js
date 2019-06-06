@@ -18,13 +18,9 @@ class App extends React.Component {
     render() {
         // when data from Reddit successfully loads
         if (this.state.subreddit) {
-            const subredditPosts = this.state.subreddit.data.children;
-            const postListings = subredditPosts.map(({ data }, index) => {
-                return <li key={index}>{data.title}</li>
-            });
             return (
                 <ul className='container'>
-        			{ postListings }
+                	<Listing subreddit={this.state.subreddit} />
         		</ul>
             )
         }
