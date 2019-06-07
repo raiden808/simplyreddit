@@ -24,6 +24,7 @@ class App extends React.Component {
 		const nextPageConstant = this.state.subreddit.data.after;
 		return this.fetchPosts("nosleep", `&after=${nextPageConstant}`);
 	};
+
 	render() {
 		// when data from Reddit successfully loads
 		if (this.state.subreddit) {
