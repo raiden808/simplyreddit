@@ -29,10 +29,13 @@ class App extends React.Component {
 		// when data from Reddit successfully loads
 		if (this.state.subreddit) {
 			return (
-				<ul className="container">
-					<Listing subreddit={this.state.subreddit} />
-					<Pagination nextPage={this.nextPage} />
-				</ul>
+				<div className="container">
+					<ul >
+						<Listing subreddit={this.state.subreddit} />
+						<Pagination nextPage={this.nextPage} />
+					</ul>
+				</div>
+				
 			);
 		}
 		// if data hasn't loaded yet, don't put anything on the page
