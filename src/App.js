@@ -30,6 +30,9 @@ class App extends React.Component {
 		if (this.state.subreddit) {
 			return (
 				<div className="container">
+					<div className="single_thread">
+
+					</div>
 					<ul >
 						<Listing subreddit={this.state.subreddit} />
 						<Pagination nextPage={this.nextPage} />
