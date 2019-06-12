@@ -2,6 +2,7 @@ import React from "react";
 import Listing from "./components/Listing";
 import Pagination from "./components/Pagination";
 import Search from "./components/Search"
+import {Helmet} from 'react-helmet'
 
 
 const ReturnListing = props => {
@@ -79,6 +80,9 @@ class App extends React.Component {
 			if(this.state.singleThread != ""){
 				return(
 					<div className="container">
+						<Helmet>
+				        	<title>SimplyReddit</title>
+				      	</Helmet>
 						<div className="single_thread">
 							<ReturnListing  returnListing={this.returnListing} />
 								<div dangerouslySetInnerHTML={{__html: this.state.singleThread}}></div>
@@ -90,7 +94,11 @@ class App extends React.Component {
 
 			else{
 				return(
+		
 					<div className="container">
+						<Helmet>
+					        <title>SimplyReddit</title>
+					    </Helmet>
 						<Search searchSub={this.searchSub} />
 						<Listing subreddit={this.state.subreddit} specThreadChange={this.specThreadChange} singleThread={this.state.singleThread} />
 						<Pagination nextPage={this.nextPage} />
