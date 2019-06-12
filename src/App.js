@@ -17,7 +17,7 @@ class App extends React.Component {
 		this.state = {
 			subreddit: "", // data from API goes here
 			singleThread: "",
-			currentSub:"confession"
+			currentSub:"UnresolvedMysteries"
 		};
 	}
 
@@ -59,7 +59,7 @@ class App extends React.Component {
 		alert(
 			"An error ocurred. That subreddit probably doesn't exist. Reverting to r/popular"
 		);
-		this.searchSub("popular"); // after error, we go back to default sub
+		this.searchSub("UnresolvedMysteries"); // after error, we go back to default sub
 	};
 
 	returnListing = () =>{
