@@ -26,8 +26,8 @@ class Search extends React.Component{
 
 	render() {
 		return (
-			<div>
-				<p>Search a subreddit:</p>
+			<div class="header">
+				<span>A text-based subreddit reader: </span>
 				<input
 					value={this.state.inputText}
 					onChange={this.handleInputValue}

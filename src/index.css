@@ -15,7 +15,12 @@ html { font-family: 'Inter', sans-serif; }
 .container ul li {margin-bottom: 8px;}
 .pagination{margin-top: 20px;}
 
-li {margin-top: 13px;}
+.header {
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+li {margin-top: 20px;}
 a:visited {color:initial}
 a:active {color: blue;}
 a:link {text-decoration: none;}
