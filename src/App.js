@@ -77,37 +77,40 @@ class App extends React.Component {
 		// when data from Reddit successfully loads
 		if (this.state.subreddit) {
 
-			if(this.state.singleThread != ""){
-				return(
-					<div className="container">
-						<Helmet>
-				        	<title>SimplyReddit</title>
-				      	</Helmet>
-						<div className="single_thread">
-							<ReturnListing  returnListing={this.returnListing} />
-								<div dangerouslySetInnerHTML={{__html: this.state.singleThread}}></div>
-							<ReturnListing  returnListing={this.returnListing} />
-						</div>
-					</div>
-				)
-			}
 
-			else{
-				return(
-		
-					<div className="container">
-						<Helmet>
-					        <title>SimplyReddit</title>
-					    </Helmet>
-						<Search searchSub={this.searchSub} />
-						<Listing subreddit={this.state.subreddit} specThreadChange={this.specThreadChange} singleThread={this.state.singleThread} />
-						<Pagination nextPage={this.nextPage} />
-					</div>
-				)
-			}
+			const singleThreadStatus = this.state.singleThread === '';
+
+			console.log(singleThreadStatus);
+
+			return(
+				<div className="container">
+					<Helmet>
+			        	<title>SimplyReddit</title>
+			      	</Helmet>
+
+			      	{ singleThreadStatus
+				        ? 	
+				        	<div>
+				        		<Search searchSub={this.searchSub} />
+								<Listing subreddit={this.state.subreddit} specThreadChange={this.specThreadChange} singleThread={this.state.singleThread} />
+								<Pagination nextPage={this.nextPage} />
+							</div>
+				        : 	
+				        	<div className="single_thread">
+								<ReturnListing  returnListing={this.returnListing} />
+									<div dangerouslySetInnerHTML={{__html: this.state.singleThread}}></div>
+								<ReturnListing  returnListing={this.returnListing} />
+							</div>
+				    }
+				</div>
+			)
+
 		}
 		// if data hasn't loaded yet, don't put anything on the page
-		return null;
+		else{
+			return null;
+		}
+		
 	}
 }
 export default App;
