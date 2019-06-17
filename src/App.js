@@ -3,7 +3,7 @@ import Listing from "./components/Listing"
 import Pagination from "./components/Pagination"
 import Search from "./components/Search"
 import {Helmet} from 'react-helmet'
-import AddSubreddit from './components/AddSubreddit'
+import ChangeSubreddit from './components/ChangeSubreddit'
 
 
 const ReturnListing = props => {
@@ -47,6 +47,7 @@ class App extends React.Component {
 		}
 
 	};
+	
 	nextPage = () => {
 		// this constant is the post after which the new posts are fetched,
 		// the return function includes a parameter with the URI component with the next page constant
@@ -74,7 +75,6 @@ class App extends React.Component {
 		this.fetchPosts(subreddit);
 	}
 
-
 	render() {
 		// when data from Reddit successfully loads
 		if (this.state.subreddit) {
@@ -96,7 +96,8 @@ class App extends React.Component {
 				        		<Search 
 				        			searchSub={this.searchSub} 
 				        		/>
-				        		<AddSubreddit  
+				        		<ChangeSubreddit  
+				        			searchSub={this.searchSub} 
 				        			displaySubs={this.state.savedSub}
 				        		/>
 				        		<ul className='listings'>
