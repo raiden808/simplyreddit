@@ -20,7 +20,7 @@ class App extends React.Component {
 			subreddit    :   "",    // data from API goes here
 			singleThread :   "",    // thread content goes here
 			currentSub   :   "tifu",// active sub
-			savedSub     :   []
+			savedSub     :   [] //bookmark subs
 		};
 	}
 
@@ -31,6 +31,7 @@ class App extends React.Component {
 
 		let retrievedObject = JSON.parse(localStorage.getItem('localSub'));
 
+		//if no local storage
 		if(localStorage.getItem('localSub') === null){
 			this.setState({ 
 				savedSub: ["talesfromtechsupport","tifu","IDontWorkHereLady"]
@@ -69,6 +70,7 @@ class App extends React.Component {
 		return this.fetchPosts(this.state.currentSub, `&after=${nextPageConstant}`);
 	};
 
+	//render textContent on click of subreddit
 	specThreadChange = thread =>{
 		this.setState({ singleThread:thread})
 	}
@@ -89,10 +91,11 @@ class App extends React.Component {
 		    })
 	  	})
 
-		//force render
+		//force render of changes
 	  	this.setState(this.state);
 	};
 
+	//re render listing
 	returnListing = () =>{
 		this.setState({ singleThread:""})
 	}
@@ -122,12 +125,7 @@ class App extends React.Component {
 	addSub = subreddit => {
 		this.setState({ savedSub:[...this.state.savedSub,subreddit] })
 
-		//let localSub = JSON.parse(localStorage.getItem('localSub')) || [];
-		//let newSub = [...localSub,subreddit]
-
-		//experiment
 		let newSub = [...this.state.savedSub,subreddit]
-
 		//update local storage
 		localStorage.setItem("localSub",JSON.stringify(newSub))
 	}
@@ -139,8 +137,6 @@ class App extends React.Component {
 
 
 			const singleThreadStatus = this.state.singleThread === '';
-
-			console.log(singleThreadStatus);
 
 			return(
 				<div className="container">

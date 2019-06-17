@@ -5,13 +5,11 @@ class Search extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			inputText: "", // data from API goes here
+			inputText: "", //allows textbox state change
 		};
 
 		this.handlePressEnter = this.handlePressEnter.bind(this)
 	}
-
-
 
 	//handles input text change
 	handleInputValue = e => {

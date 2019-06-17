@@ -8,9 +8,8 @@ class ChangeSubreddit extends React.Component{
 		this.handleButtonRelease = this.handleButtonRelease.bind(this)
 	}
 
-	//index 
+	//set long press function 
 	handleButtonPress (subreddit) {
-		console.log(this)
     	this.buttonPressTimer = setTimeout(() => this.props.removeSub(subreddit), 1500);
 	}
 
@@ -18,10 +17,9 @@ class ChangeSubreddit extends React.Component{
 		clearTimeout(this.buttonPressTimer);
 	}
 
+	//saved subreddits render
 	render(){
 		const subredditData = this.props.displaySubs;
-
-		//use () => {function name} to pass the function on click
 		return(
 			<div className='bookmark_subs'>
 				{subredditData.map(item => (
