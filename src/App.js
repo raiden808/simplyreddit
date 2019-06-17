@@ -1,8 +1,9 @@
-import React from "react";
-import Listing from "./components/Listing";
-import Pagination from "./components/Pagination";
+import React from "react"
+import Listing from "./components/Listing"
+import Pagination from "./components/Pagination"
 import Search from "./components/Search"
 import {Helmet} from 'react-helmet'
+import AddSubreddit from './components/AddSubreddit'
 
 
 const ReturnListing = props => {
@@ -16,9 +17,10 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			subreddit: "", // data from API goes here
-			singleThread: "",
-			currentSub:"tifu"
+			subreddit    :   "",    // data from API goes here
+			singleThread :   "",    // thread content goes here
+			currentSub   :   "tifu",// active sub
+			savedSub     :   ["talesfromtechsupport","tifu","IDontWorkHereLady"]
 		};
 	}
 
@@ -72,6 +74,10 @@ class App extends React.Component {
 		this.fetchPosts(subreddit);
 	}
 
+	displaySubs = (subreddits) => {
+
+	}
+
 
 	render() {
 		// when data from Reddit successfully loads
@@ -91,15 +97,30 @@ class App extends React.Component {
 			      	{ singleThreadStatus
 				        ? 	
 				        	<div>
-				        		<Search searchSub={this.searchSub} />
-								<Listing subreddit={this.state.subreddit} specThreadChange={this.specThreadChange} singleThread={this.state.singleThread} />
-								<Pagination nextPage={this.nextPage} />
+				        		<Search 
+				        			searchSub={this.searchSub} 
+				        		/>
+				        		<AddSubreddit  />
+								<Listing 
+									subreddit={this.state.subreddit} 
+									specThreadChange={this.specThreadChange} 
+									singleThread={this.state.singleThread} 
+								/>
+								<Pagination 
+									nextPage={this.nextPage} 
+								/>
 							</div>
 				        : 	
 				        	<div className="single_thread">
-								<ReturnListing  returnListing={this.returnListing} />
-									<div dangerouslySetInnerHTML={{__html: this.state.singleThread}}></div>
-								<ReturnListing  returnListing={this.returnListing} />
+								<ReturnListing  
+									returnListing={this.returnListing} 
+								/>
+								<div 
+									dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
+								</div>
+								<ReturnListing  
+									returnListing={this.returnListing} 
+								/>
 							</div>
 				    }
 				</div>

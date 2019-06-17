@@ -2,11 +2,11 @@ import React from "react";
 
 class AddSubreddit extends React.Component{
 	render(){
-		return{
+		return(
 			<div>
-				
+				<p>Hello</p>
 			</div>
-		}
+		)
 	}
 }
 
