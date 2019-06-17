@@ -61,9 +61,22 @@ class App extends React.Component {
 
 	handleFetchError = err => {
 		alert(
-			"An error ocurred. That subreddit probably doesn't exist. Reverting to r/popular"
+			"An error ocurred. That subreddit probably doesn't exist. Reverting to r/tifu"
 		);
 		this.searchSub("tifu"); // after error, we go back to default sub
+
+		//remove not working sub
+		let savedSub  = this.state.savedSub
+		this.setState({
+		      savedSub: this.state.savedSub.map((sub, index) => {
+		        if (savedSub.length-1 !== index) {
+		            return sub // not the sub we are targeting, don't change it
+		        }
+		    })
+	  	})
+
+		//force render
+	  	this.setState(this.state);
 	};
 
 	returnListing = () =>{

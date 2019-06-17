@@ -36,7 +36,7 @@ class ChangeSubreddit extends React.Component{
 					        onMouseUp={ () => { this.handleButtonRelease(item)}} 
 					        onMouseLeave={ () => { this.handleButtonRelease(item)}}
             			>
-            				r/{item}
+            				{"r/"+item}
             			</a>
             		</span>
           		))}
