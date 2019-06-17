@@ -3,12 +3,14 @@ import React from "react";
 class ChangeSubreddit extends React.Component{
 	constructor() {
     	super()
+    	//this binding enables access to state and other params
 	    this.handleButtonPress = this.handleButtonPress.bind(this)
 		this.handleButtonRelease = this.handleButtonRelease.bind(this)
 	}
 
 	//index 
 	handleButtonPress (subreddit) {
+		console.log(this)
     	this.buttonPressTimer = setTimeout(() => alert(subreddit), 1500);
 	}
 
