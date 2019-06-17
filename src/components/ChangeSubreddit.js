@@ -42,6 +42,7 @@ class ChangeSubreddit extends React.Component{
             			</button>
             		</span>
           		))}
+          		<div className='subDesc'><small>Longpress to remove sub</small></div>
 			</div>
 		)
 	}

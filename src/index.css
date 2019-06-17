@@ -42,6 +42,9 @@ ul.listings {
     padding-left: 1px;
 }
 
+.subDesc { display:none; }
+.bookmark_subs:hover .subDesc { display:block; }
+
 .listings li {margin-top: 20px;}
 .listings a:visited {color:initial}
 .listings a:active {color: blue;}
