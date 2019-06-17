@@ -12,7 +12,6 @@ html { font-family: 'Inter', sans-serif; }
     margin: auto;
 }
 
-.container ul li {margin-bottom: 8px;}
 .pagination{margin-top: 20px;}
 
 .header {
@@ -20,10 +19,20 @@ html { font-family: 'Inter', sans-serif; }
     margin-bottom: 32px;
 }
 
-li {margin-top: 20px;}
-a:visited {color:initial}
-a:active {color: blue;}
-a:link {text-decoration: none;}
+.bookmark_subs span {
+    margin-right: 5px;
+}
+
+.container ul li {margin-bottom: 8px;}
+ul.listings {
+    /* padding: 0px; */
+    padding-left: 1px;
+}
+
+.listings li {margin-top: 20px;}
+.listings a:visited {color:initial}
+.listings a:active {color: blue;}
+.listings a:link {text-decoration: none;}
 
 @media only screen and (max-width: 480px){
     .container {

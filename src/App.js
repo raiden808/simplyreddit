@@ -99,11 +99,13 @@ class App extends React.Component {
 				        		<AddSubreddit  
 				        			displaySubs={this.state.savedSub}
 				        		/>
-								<Listing 
-									subreddit={this.state.subreddit} 
-									specThreadChange={this.specThreadChange} 
-									singleThread={this.state.singleThread} 
-								/>
+				        		<ul className='listings'>
+									<Listing 
+										subreddit={this.state.subreddit} 
+										specThreadChange={this.specThreadChange} 
+										singleThread={this.state.singleThread} 
+									/>
+								</ul>
 								<Pagination 
 									nextPage={this.nextPage} 
 								/>

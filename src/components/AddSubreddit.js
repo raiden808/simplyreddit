@@ -5,11 +5,11 @@ class AddSubreddit extends React.Component{
 
 		const subredditData = this.props.displaySubs;
 
-		console.log(subredditData)
-
 		return(
-			<div>
-				<p>Hello</p>
+			<div className='bookmark_subs'>
+				{subredditData.map(item => (
+            		<span key={item}><a href="#">r/{item} </a></span>
+          		))}
 			</div>
 		)
 	}
