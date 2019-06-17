@@ -12,10 +12,10 @@ Simple functionalities:
 
 
 ### Screenshot 1:
-<div style="text-align: center"> <img src="https://i.imgur.com/hYGebAI.png"> </div>
+<p align="center"> <img src="https://i.imgur.com/hYGebAI.png"> </p>
 
 ### Screenshot 2:
-<div style="text-align: center"> <img src="https://i.imgur.com/Dt5r0AN.png"> </div>
+<p align="center"> <img src="https://i.imgur.com/Dt5r0AN.png"> </p>
 
 ### Collaborators
 Special thanks to [diazabdulm](https://github.com/diazabdulm) for giving insights and being a mentor.
