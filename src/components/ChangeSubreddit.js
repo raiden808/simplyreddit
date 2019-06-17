@@ -11,7 +11,7 @@ class ChangeSubreddit extends React.Component{
 	//index 
 	handleButtonPress (subreddit) {
 		console.log(this)
-    	this.buttonPressTimer = setTimeout(() => alert(subreddit), 1500);
+    	this.buttonPressTimer = setTimeout(() => this.props.removeSub(subreddit), 1500);
 	}
 
 	handleButtonRelease (subreddit) {

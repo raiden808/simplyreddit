@@ -75,6 +75,17 @@ class App extends React.Component {
 		this.fetchPosts(subreddit);
 	}
 
+	//removes sub on long press
+	removeSub = index => {
+		const savedSub  = this.state.savedSub
+
+	  	this.setState({
+		    savedSub: savedSub.filter((i) => {
+		      	return i !== index
+		    }),
+	  	})
+	}
+
 	render() {
 		// when data from Reddit successfully loads
 		if (this.state.subreddit) {
@@ -99,6 +110,7 @@ class App extends React.Component {
 				        		<ChangeSubreddit  
 				        			searchSub={this.searchSub} 
 				        			displaySubs={this.state.savedSub}
+				        			removeSub={this.removeSub}
 				        		/>
 				        		<ul className='listings'>
 									<Listing 
