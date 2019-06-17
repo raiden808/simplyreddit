@@ -12,10 +12,10 @@ Simple functionalities:
 
 
 ### Screenshot 1:
-<center>![Screenshot 1](https://i.imgur.com/hYGebAI.png)</center>
+<center> <img src="https://i.imgur.com/hYGebAI.png"> </center>
 
 ### Screenshot 2:
-<center>![Screenshot 2](https://i.imgur.com/Dt5r0AN.png)</center>
+<center> <img src="https://i.imgur.com/Dt5r0AN.png"> </center>
 
 ### Collaborators
 Special thanks to [diazabdulm](https://github.com/diazabdulm) for giving insights and being a mentor.
