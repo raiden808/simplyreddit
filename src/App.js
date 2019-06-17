@@ -74,10 +74,6 @@ class App extends React.Component {
 		this.fetchPosts(subreddit);
 	}
 
-	displaySubs = (subreddits) => {
-
-	}
-
 
 	render() {
 		// when data from Reddit successfully loads
@@ -100,7 +96,9 @@ class App extends React.Component {
 				        		<Search 
 				        			searchSub={this.searchSub} 
 				        		/>
-				        		<AddSubreddit  />
+				        		<AddSubreddit  
+				        			displaySubs={this.state.savedSub}
+				        		/>
 								<Listing 
 									subreddit={this.state.subreddit} 
 									specThreadChange={this.specThreadChange} 
