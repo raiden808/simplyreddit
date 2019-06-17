@@ -26,8 +26,7 @@ class ChangeSubreddit extends React.Component{
 			<div className='bookmark_subs'>
 				{subredditData.map(item => (
             		<span key={item}>
-            			<a 
-            				href="#" 
+            			<button
             				onClick={() => { this.props.searchSub(item)}}
 
             				onTouchStart={ () => { this.handleButtonPress(item)}} 
@@ -40,7 +39,7 @@ class ChangeSubreddit extends React.Component{
             					/*if state change to undefined*/
             					(typeof item !== 'undefined') ? "r/" + item : ""
             				}
-            			</a>
+            			</button>
             		</span>
           		))}
 			</div>

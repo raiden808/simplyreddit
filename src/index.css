@@ -23,6 +23,19 @@ html { font-family: 'Inter', sans-serif; }
     margin-right: 5px;
 }
 
+.bookmark_subs button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 .container ul li {margin-bottom: 8px;}
 ul.listings {
     /* padding: 0px; */
