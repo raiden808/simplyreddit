@@ -21,6 +21,12 @@ class Search extends React.Component{
 		const inputText = e.target.value;
 		if (e.key === "Enter") {
 			this.props.searchSub(this.state.inputText)
+			this.props.addSub(this.state.inputText)
+
+			//clears text input
+			this.setState({
+		      inputText: ''
+		    });
 		}
 	};
 

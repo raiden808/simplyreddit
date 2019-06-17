@@ -70,6 +70,9 @@ class App extends React.Component {
 		this.setState({ singleThread:""})
 	}
 
+	/*
+	* Subreddit Manipulations
+	*/
 	searchSub = (subreddit) =>{
 		this.setState({ currentSub:subreddit})
 		this.fetchPosts(subreddit);
@@ -85,6 +88,11 @@ class App extends React.Component {
 		    }),
 	  	})
 	}
+
+	addSub = subreddit => {
+		this.setState({ savedSub:[...this.state.savedSub,subreddit] })
+	}
+	
 
 	render() {
 		// when data from Reddit successfully loads
@@ -106,6 +114,7 @@ class App extends React.Component {
 				        	<div>
 				        		<Search 
 				        			searchSub={this.searchSub} 
+				        			addSub={this.addSub} 
 				        		/>
 				        		<ChangeSubreddit  
 				        			searchSub={this.searchSub} 
