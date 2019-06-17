@@ -122,8 +122,11 @@ class App extends React.Component {
 	addSub = subreddit => {
 		this.setState({ savedSub:[...this.state.savedSub,subreddit] })
 
-		let localSub = JSON.parse(localStorage.getItem('localSub')) || [];
-		let newSub = [...localSub,subreddit]
+		//let localSub = JSON.parse(localStorage.getItem('localSub')) || [];
+		//let newSub = [...localSub,subreddit]
+
+		//experiment
+		let newSub = [...this.state.savedSub,subreddit]
 
 		//update local storage
 		localStorage.setItem("localSub",JSON.stringify(newSub))
