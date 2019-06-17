@@ -30,7 +30,6 @@ class App extends React.Component {
 		this.fetchPosts(defaultSubreddit);
 
 		let retrievedObject = JSON.parse(localStorage.getItem('localSub'));
-		
 
 		if(localStorage.getItem('localSub') === null){
 			this.setState({ 
@@ -115,16 +114,19 @@ class App extends React.Component {
 		      	return i !== index
 		    }),
 	  	})
+
+	  	//updates local storage
+	  	localStorage.setItem("localSub",JSON.stringify(this.state.savedSub))
 	}
 
 	addSub = subreddit => {
 		this.setState({ savedSub:[...this.state.savedSub,subreddit] })
 
 		let localSub = JSON.parse(localStorage.getItem('localSub')) || [];
-		let newSub = localSub.concat(subreddit)
+		let newSub = [...localSub,subreddit]
 
+		//update local storage
 		localStorage.setItem("localSub",JSON.stringify(newSub))
-
 	}
 	
 
