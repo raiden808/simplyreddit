@@ -20,7 +20,7 @@ class App extends React.Component {
 			subreddit    :   "",    // data from API goes here
 			singleThread :   "",    // thread content goes here
 			currentSub   :   "tifu",// active sub
-			savedSub     :   ["talesfromtechsupport","tifu","IDontWorkHereLady"]
+			savedSub     :   []
 		};
 	}
 
@@ -28,7 +28,22 @@ class App extends React.Component {
 	componentDidMount() {
 		const defaultSubreddit = this.state.currentSub;
 		this.fetchPosts(defaultSubreddit);
+
+		let retrievedObject = JSON.parse(localStorage.getItem('localSub'));
+		
+
+		if(localStorage.getItem('localSub') === null){
+			this.setState({ 
+				savedSub: ["talesfromtechsupport","tifu","IDontWorkHereLady"]
+			});
+		}
+		else{
+			this.setState({ 
+				savedSub: retrievedObject
+			});
+		}
 	}
+
 	fetchPosts = async (subreddit, nextPage = "") => {
 		try {
 			// fetch posts for the provided subreddit, then save them to the state
@@ -104,6 +119,12 @@ class App extends React.Component {
 
 	addSub = subreddit => {
 		this.setState({ savedSub:[...this.state.savedSub,subreddit] })
+
+		let localSub = JSON.parse(localStorage.getItem('localSub')) || [];
+		let newSub = localSub.concat(subreddit)
+
+		localStorage.setItem("localSub",JSON.stringify(newSub))
+
 	}
 	
 

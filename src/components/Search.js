@@ -7,7 +7,11 @@ class Search extends React.Component{
 		this.state = {
 			inputText: "", // data from API goes here
 		};
+
+		this.handlePressEnter = this.handlePressEnter.bind(this)
 	}
+
+
 
 	//handles input text change
 	handleInputValue = e => {
