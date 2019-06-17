@@ -6,10 +6,13 @@ Inspired by [Redackt](https://github.com/romanparkhomenko/Redackt) and  [MSOutlo
 
 ### Features:
 Simple functionalities:
-- **Search Subreddits** - Search your desired subreddit in the textbox
+- **Search Subreddits** - Search your desired subreddit in the textbox.
 - **Save Subreddits** - Anything you search in the textbox will be saved in the local storage of your browser.
-- **Remove Subreddit** - Lonpress the sub you want to remove.
+- **Remove Subreddit** - Longpress the sub you want to remove.
 
+### To-Do List:
+- **Missing Comments** - Comments are currently not available
+- **Dark Mode** - Darkmode is still missing
 
 ### Screenshot 1:
 <p align="center"> <img src="https://i.imgur.com/hYGebAI.png"> </p>
@@ -19,3 +22,6 @@ Simple functionalities:
 
 ### Collaborators
 Special thanks to [diazabdulm](https://github.com/diazabdulm) for giving insights and being a mentor.
+
+If you guys want to collaborate or improve this reader feel free to contact me in this email.
+raiden.nalasa@gmail.com
