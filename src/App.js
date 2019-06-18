@@ -19,7 +19,7 @@ class App extends React.Component {
 		this.state = {
 			subreddit    :   "",    // data from API goes here
 			singleThread :   "",    // thread content goes here
-			currentSub   :   "tifu",// active sub
+			currentSub   :   "TalesFromTechSupport",// active sub
 			savedSub     :   [] //bookmark subs
 		};
 	}
