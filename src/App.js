@@ -34,7 +34,7 @@ class App extends React.Component {
 		//if no local storage
 		if(localStorage.getItem('localSub') === null){
 			this.setState({ 
-				savedSub: ["talesfromtechsupport","tifu","IDontWorkHereLady"]
+				savedSub: ["TalesFromTechSupport","MaliciousCompliance","IDontWorkHereLady"]
 			});
 		}
 		else{
@@ -77,9 +77,9 @@ class App extends React.Component {
 
 	handleFetchError = err => {
 		alert(
-			"An error ocurred. That subreddit probably doesn't exist. Reverting to r/tifu"
+			"An error ocurred. That subreddit probably doesn't exist. Reverting to r/TalesFromTechSupport"
 		);
-		this.searchSub("tifu"); // after error, we go back to default sub
+		this.searchSub("TalesFromTechSupport"); // after error, we go back to default sub
 
 		//remove not working sub
 		let savedSub  = this.state.savedSub
