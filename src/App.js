@@ -4,6 +4,7 @@ import Pagination from "./components/Pagination"
 import Search from "./components/Search"
 import {Helmet} from 'react-helmet'
 import ChangeSubreddit from './components/ChangeSubreddit'
+import Menu from './components/Menu'
 
 
 const ReturnListing = props => {
@@ -143,6 +144,7 @@ class App extends React.Component {
 					<Helmet>
 			        	<title>SimplyReddit</title>
 			      	</Helmet>
+			      	<Menu />
 
 			      	{ singleThreadStatus
 				        ? 	
