@@ -149,15 +149,10 @@ class App extends React.Component {
 			      	{ singleThreadStatus
 				        ? 	
 				        	<div>
-				        		<Search 
-				        			searchSub={this.searchSub} 
-				        			addSub={this.addSub} 
-				        		/>
-				        		<ChangeSubreddit  
-				        			searchSub={this.searchSub} 
-				        			displaySubs={this.state.savedSub}
-				        			removeSub={this.removeSub}
-				        		/>
+				        		{/*Active Sub*/}
+				        		<div className='activeSub'>
+				        			<h3>{"r/"+this.state.currentSub}</h3>
+				        		</div>
 				        		<ul className='listings'>
 									<Listing 
 										subreddit={this.state.subreddit} 
