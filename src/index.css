@@ -94,9 +94,17 @@ ul.listings {
   padding:10px 0;
   font-size:25px;
 }
-.menu-toggle a {
-  text-decoration:none;
-  color: #333;
+
+/*toggle menu*/
+.toggle-slider {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
+
+.toggle-slider.closed {
+  max-height: 0;
+  transition: max-height 0.15s ease-out;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 480px){
