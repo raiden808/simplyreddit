@@ -21,7 +21,8 @@ class App extends React.Component {
 			subreddit    :   "",    // data from API goes here
 			singleThread :   "",    // thread content goes here
 			currentSub   :   "TalesFromTechSupport",// active sub
-			savedSub     :   [] //bookmark subs
+			savedSub     :   [], //bookmark subs
+			menuStatus   :   ""
 		};
 	}
 

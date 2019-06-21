@@ -95,6 +95,10 @@ ul.listings {
   font-size:25px;
 }
 
+.menu-toggle a:visited {
+  color: black;
+}
+
 /*toggle menu*/
 .toggle-slider {
   max-height: 500px;
