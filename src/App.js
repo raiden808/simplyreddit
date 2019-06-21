@@ -140,44 +140,50 @@ class App extends React.Component {
 
 			const singleThreadStatus = this.state.singleThread === '';
 
+			let renderLayout;
+
+			if(singleThreadStatus != false){
+				renderLayout = 
+				<div>
+	        		{/*Active Sub*/}
+	        		<div className='activeSub'>
+	        			<h3>{"r/"+this.state.currentSub}</h3>
+	        		</div>
+	        		<ul className='listings'>
+						<Listing 
+							subreddit={this.state.subreddit} 
+							specThreadChange={this.specThreadChange} 
+							singleThread={this.state.singleThread} 
+						/>
+					</ul>
+					<Pagination 
+						nextPage={this.nextPage} 
+					/>
+				</div>;
+			}
+			else{
+				renderLayout = 
+				<div className="single_thread">
+					<ReturnListing  
+						returnListing={this.returnListing} 
+					/>
+					<div 
+						dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
+					</div>
+					<ReturnListing  
+						returnListing={this.returnListing} 
+					/>
+				</div>;
+			}
+
+			//render layout
 			return(
 				<div className="container">
 					<Helmet>
 			        	<title>SimplyReddit</title>
 			      	</Helmet>
 			      	<Menu />
-
-			      	{ singleThreadStatus
-				        ? 	
-				        	<div>
-				        		{/*Active Sub*/}
-				        		<div className='activeSub'>
-				        			<h3>{"r/"+this.state.currentSub}</h3>
-				        		</div>
-				        		<ul className='listings'>
-									<Listing 
-										subreddit={this.state.subreddit} 
-										specThreadChange={this.specThreadChange} 
-										singleThread={this.state.singleThread} 
-									/>
-								</ul>
-								<Pagination 
-									nextPage={this.nextPage} 
-								/>
-							</div>
-				        : 	
-				        	<div className="single_thread">
-								<ReturnListing  
-									returnListing={this.returnListing} 
-								/>
-								<div 
-									dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
-								</div>
-								<ReturnListing  
-									returnListing={this.returnListing} 
-								/>
-							</div>
-				    }
+			      	{renderLayout}
 				</div>
 			)
 
