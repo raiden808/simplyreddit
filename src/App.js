@@ -46,6 +46,7 @@ class App extends React.Component {
 		}
 	}
 
+	//load selected sub
 	fetchPosts = async (subreddit, nextPage = "") => {
 		try {
 			// fetch posts for the provided subreddit, then save them to the state
@@ -64,18 +65,6 @@ class App extends React.Component {
 		}
 
 	};
-	
-	nextPage = () => {
-		// this constant is the post after which the new posts are fetched,
-		// the return function includes a parameter with the URI component with the next page constant
-		const nextPageConstant = this.state.subreddit.data.after;
-		return this.fetchPosts(this.state.currentSub, `&after=${nextPageConstant}`);
-	};
-
-	//render textContent on click of subreddit
-	specThreadChange = thread =>{
-		this.setState({ singleThread:thread})
-	}
 
 	handleFetchError = err => {
 		alert(
@@ -96,18 +85,37 @@ class App extends React.Component {
 		//force render of changes
 	  	this.setState(this.state);
 	};
+	
 
-	//re render listing
+	//navigation and individual thread rendering
+	nextPage = () => {
+		//last subreddit in the listing
+		const nextPageConstant = this.state.subreddit.data.after;
+		return this.fetchPosts(this.state.currentSub, `&after=${nextPageConstant}`);
+	};
+
+	//render textContent on click of subreddit
+	specThreadChange = thread =>{
+		this.setState({ singleThread:thread})
+	}
+
 	returnListing = () =>{
 		this.setState({ singleThread:""})
 	}
 
-	/*
-	* Subreddit Manipulations
-	*/
+
+	//search and add
 	searchSub = (subreddit) =>{
 		this.setState({ currentSub:subreddit})
 		this.fetchPosts(subreddit);
+	}
+
+	addSub = subreddit => {
+		this.setState({ savedSub:[...this.state.savedSub,subreddit] })
+
+		let newSub = [...this.state.savedSub,subreddit]
+		//update local storage
+		localStorage.setItem("localSub",JSON.stringify(newSub))
 	}
 
 	//removes sub on long press
@@ -122,14 +130,6 @@ class App extends React.Component {
 
 	  	//updates local storage
 	  	localStorage.setItem("localSub",JSON.stringify(this.state.savedSub))
-	}
-
-	addSub = subreddit => {
-		this.setState({ savedSub:[...this.state.savedSub,subreddit] })
-
-		let newSub = [...this.state.savedSub,subreddit]
-		//update local storage
-		localStorage.setItem("localSub",JSON.stringify(newSub))
 	}
 	
 
