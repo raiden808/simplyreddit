@@ -133,58 +133,92 @@ class App extends React.Component {
 	}
 
 	//menu page rendering
+	displayUI = (status) =>{
+		this.setState({
+			menuStatus:status,
+		});
+
+		console.log(this.state.menuStatus);
+	}
 	
 
 	render() {
 		// when data from Reddit successfully loads
 		if (this.state.subreddit) {
 
-
 			const singleThreadStatus = this.state.singleThread === '';
+			const menuStatus = this.state.menuStatus;
 
 			let renderLayout;
 
-			if(singleThreadStatus != false){
-				renderLayout = 
-				<div>
-	        		{/*Active Sub*/}
-	        		<div className='activeSub'>
-	        			<h3>{"r/"+this.state.currentSub}</h3>
-	        		</div>
-	        		<ul className='listings'>
-						<Listing 
-							subreddit={this.state.subreddit} 
-							specThreadChange={this.specThreadChange} 
-							singleThread={this.state.singleThread} 
-						/>
-					</ul>
-					<Pagination 
-						nextPage={this.nextPage} 
-					/>
-				</div>;
-			}
-			else{
-				renderLayout = 
-				<div className="single_thread">
-					<ReturnListing  
-						returnListing={this.returnListing} 
-					/>
-					<div 
-						dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
-					</div>
-					<ReturnListing  
-						returnListing={this.returnListing} 
-					/>
-				</div>;
+			switch (menuStatus) {
+				case "search":
+					renderLayout = 
+						<div>
+							search
+						</div>;
+					break;
+				case "home":
+					renderLayout = 
+						<div>
+							home
+						</div>;
+					break;
+				case "subreddits":
+					renderLayout = 
+						<div>
+							subreddits
+						</div>;
+					break;
+				case "threads":
+					renderLayout = 
+						<div>
+							threads
+						</div>;
+					break;
+				default:
+					if(singleThreadStatus != false){
+						renderLayout = 
+							<div>
+				        		<div className='activeSub'>
+				        			<h3>{"r/"+this.state.currentSub}</h3>
+				        		</div>
+				        		<ul className='listings'>
+									<Listing 
+										subreddit={this.state.subreddit} 
+										specThreadChange={this.specThreadChange} 
+										singleThread={this.state.singleThread} 
+									/>
+								</ul>
+								<Pagination 
+									nextPage={this.nextPage} 
+								/>
+							</div>;
+					}
+					else{
+						renderLayout = 
+						<div className="single_thread">
+							<ReturnListing  
+								returnListing={this.returnListing} 
+							/>
+							<div 
+								dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
+							</div>
+							<ReturnListing  
+								returnListing={this.returnListing} 
+							/>
+						</div>;
+					}
+					break;
 			}
 
-			//render layout
+
 			return(
 				<div className="container">
 					<Helmet>
 			        	<title>SimplyReddit</title>
 			      	</Helmet>
-			      	<Menu />
+			      	<Menu displayUI={this.displayUI} />
 			      	{renderLayout}
 				</div>
 			)

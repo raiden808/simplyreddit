@@ -23,23 +23,7 @@ class Menu extends React.Component{
 		//retrieve parent class !child
 		let target = e.currentTarget.className;
 
-		switch (target) {
-			case 'search':
-				// statements_1
-				break;
-			case 'home':
-				// statements_1
-				break;
-			case 'subreddits':
-				// statements_1
-				break;
-			case 'threads':
-				// statements_1
-				break;
-			default:
-				// statements_def
-				break;
-		}
+		this.props.displayUI(target);
 	}
 
 
