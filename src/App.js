@@ -131,6 +131,8 @@ class App extends React.Component {
 	  	//updates local storage
 	  	localStorage.setItem("localSub",JSON.stringify(this.state.savedSub))
 	}
+
+	//menu page rendering
 	
 
 	render() {
