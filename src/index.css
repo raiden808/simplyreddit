@@ -26,6 +26,8 @@ html { font-family: 'Inter', sans-serif; }
     margin-bottom: 32px;
 }
 
+
+/*Saved subreddits*/
 .bookmark_subs span {
     margin-right: 5px;
 }
@@ -43,6 +45,17 @@ html { font-family: 'Inter', sans-serif; }
   cursor: pointer;
 }
 
+.bookmark_subs {
+    text-align: center;
+}
+
+.bookmark_subs ul {
+    padding: 0px;
+    list-style: none;
+}
+
+
+/*Default listings*/
 .container ul li {margin-bottom: 8px;}
 ul.listings {
   /* padding: 0px; */

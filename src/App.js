@@ -158,17 +158,13 @@ class App extends React.Component {
 							search
 						</div>;
 					break;
-				case "home":
-					renderLayout = 
-						<div>
-							home
-						</div>;
-					break;
 				case "subreddits":
 					renderLayout = 
-						<div>
-							subreddits
-						</div>;
+						<ChangeSubreddit  
+				        	searchSub={this.searchSub} 
+				        	displaySubs={this.state.savedSub}
+				        	removeSub={this.removeSub}
+				        />;
 					break;
 				case "threads":
 					renderLayout = 

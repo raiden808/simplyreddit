@@ -22,24 +22,26 @@ class ChangeSubreddit extends React.Component{
 		const subredditData = this.props.displaySubs;
 		return(
 			<div className='bookmark_subs'>
-				{subredditData.map(item => (
-            		<span key={item}>
-            			<button
-            				onClick={() => { this.props.searchSub(item)}}
+				<ul>
+					{subredditData.map(item => (
+	            		<li key={item}>
+	            			<button
+	            				onClick={() => { this.props.searchSub(item)}}
 
-            				onTouchStart={ () => { this.handleButtonPress(item)}} 
-					        onTouchEnd={ () => { this.handleButtonRelease(item)}} 
-					        onMouseDown={ () => { this.handleButtonPress(item)}} 
-					        onMouseUp={ () => { this.handleButtonRelease(item)}} 
-					        onMouseLeave={ () => { this.handleButtonRelease(item)}}
-            			>
-            				{ 
-            					/*if state change to undefined*/
-            					(typeof item !== 'undefined') ? "r/" + item : ""
-            				}
-            			</button>
-            		</span>
-          		))}
+	            				onTouchStart={ () => { this.handleButtonPress(item)}} 
+						        onTouchEnd={ () => { this.handleButtonRelease(item)}} 
+						        onMouseDown={ () => { this.handleButtonPress(item)}} 
+						        onMouseUp={ () => { this.handleButtonRelease(item)}} 
+						        onMouseLeave={ () => { this.handleButtonRelease(item)}}
+	            			>
+	            				{ 
+	            					/*if state change to undefined*/
+	            					(typeof item !== 'undefined') ? "r/" + item : ""
+	            				}
+	            			</button>
+	            		</li>
+	          		))}
+          		</ul>
           		<div className='subDesc'><small>Longpress to remove sub</small></div>
 			</div>
 		)
