@@ -24,6 +24,8 @@ class Menu extends React.Component{
 		let target = e.currentTarget.className;
 
 		this.props.displayUI(target);
+
+		this.handleToggle();
 	}
 
 

@@ -154,9 +154,10 @@ class App extends React.Component {
 			switch (menuStatus) {
 				case "search":
 					renderLayout = 
-						<div>
-							search
-						</div>;
+						<Search 
+				        	searchSub={this.searchSub} 
+				        	addSub={this.addSub} 
+				        />;
 					break;
 				case "subreddits":
 					renderLayout = 
