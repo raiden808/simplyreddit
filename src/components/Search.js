@@ -32,15 +32,27 @@ class Search extends React.Component{
 		}
 	};
 
+	handleClick = () =>{
+		this.props.searchSub(this.state.inputText)
+		this.props.addSub(this.state.inputText)
+
+		//clears text input
+		this.setState({
+	      inputText: ''
+	    });
+	}
+
 	render() {
 		return (
-			<div class="header">
-				<span>A text-based subreddit reader: </span>
-				<input
-					value={this.state.inputText}
-					onChange={this.handleInputValue}
-					onKeyDown={this.handlePressEnter}
-				/>
+			<div className="searchArea">
+				<h4 className="title">Search a Subreddit</h4>
+				<div className="searchField">
+					<input
+						value={this.state.inputText}
+						onChange={this.handleInputValue}
+					/>
+				</div>
+				<button className="smpl_btn" onClick={this.handleClick}>Find</button>
 			</div>
 		);
 	}

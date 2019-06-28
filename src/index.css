@@ -124,6 +124,45 @@ ul.listings {
   overflow: hidden;
 }
 
+/*search area*/
+.smpl_btn {
+  background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 21px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.searchField input{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #C2C2C2;
+  box-shadow: 1px 1px 4px #EBEBEB;
+  -moz-box-shadow: 1px 1px 4px #EBEBEB;
+  -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 7px;
+  outline: none;
+}
+
+.searchArea {
+    text-align: center;
+}
+
+.searchField {
+    margin-bottom: 15px;
+}
+
+
 @media only screen and (max-width: 480px){
     .container {
         width: auto;
