@@ -151,7 +151,27 @@ class App extends React.Component {
 
 			let renderLayout;
 
+
+			//TODO: Fix conditional of threadView
 			switch (menuStatus) {
+				case "home":
+					renderLayout = 
+						<div>
+			        		<div className='activeSub'>
+			        			<h3>{"r/"+this.state.currentSub}</h3>
+			        		</div>
+			        		<ul className='listings'>
+								<Listing 
+									subreddit={this.state.subreddit} 
+									specThreadChange={this.specThreadChange} 
+									singleThread={this.state.singleThread} 
+								/>
+							</ul>
+							<Pagination 
+								nextPage={this.nextPage} 
+							/>
+						</div>;
+					break;
 				case "search":
 					renderLayout = 
 						<Search 
@@ -166,6 +186,20 @@ class App extends React.Component {
 				        	displaySubs={this.state.savedSub}
 				        	removeSub={this.removeSub}
 				        />;
+					break;
+				case "threadView":
+					renderLayout = 
+						<div className="single_thread">
+							<ReturnListing  
+								returnListing={this.returnListing} 
+							/>
+							<div 
+								dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
+							</div>
+							<ReturnListing  
+								returnListing={this.returnListing} 
+							/>
+						</div>;
 					break;
 				case "threads":
 					renderLayout = 
@@ -183,8 +217,8 @@ class App extends React.Component {
 				        		<ul className='listings'>
 									<Listing 
 										subreddit={this.state.subreddit} 
-										specThreadChange={this.specThreadChange} 
-										singleThread={this.state.singleThread} 
+										specThreadChange={this.specThreadChange}
+
 									/>
 								</ul>
 								<Pagination 
@@ -192,21 +226,6 @@ class App extends React.Component {
 								/>
 							</div>;
 					}
-					else{
-						renderLayout = 
-						<div className="single_thread">
-							<ReturnListing  
-								returnListing={this.returnListing} 
-							/>
-							<div 
-								dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
-							</div>
-							<ReturnListing  
-								returnListing={this.returnListing} 
-							/>
-						</div>;
-					}
-					break;
 			}
 
 
