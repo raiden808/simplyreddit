@@ -156,7 +156,9 @@ class App extends React.Component {
 			let renderLayout;
 
 
-			//TODO: Fix conditional of threadView
+			//TODO: 
+			// Display slug of thread and add .json on url end
+			// Create new component to save sub
 			switch (menuStatus) {
 				case "home":
 					renderLayout = 
