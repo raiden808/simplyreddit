@@ -15,6 +15,7 @@ class Listing extends React.Component {
 		const convert = this.map_convert(threadText.toString());
 
 		this.props.specThreadChange(convert);
+		this.props.displayUI("threadView");
 	}
 
 

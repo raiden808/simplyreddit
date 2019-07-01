@@ -22,7 +22,7 @@ class App extends React.Component {
 			singleThread :   "",    // thread content goes here
 			currentSub   :   "TalesFromTechSupport",// active sub
 			savedSub     :   [], //bookmark subs
-			menuStatus   :   ""
+			menuStatus   :   "home"
 		};
 	}
 
@@ -101,6 +101,8 @@ class App extends React.Component {
 
 	returnListing = () =>{
 		this.setState({ singleThread:""})
+		//return home
+		this.setState({menuStatus:"home"});
 	}
 
 
@@ -108,6 +110,8 @@ class App extends React.Component {
 	searchSub = (subreddit) =>{
 		this.setState({ currentSub:subreddit})
 		this.fetchPosts(subreddit);
+		//return home
+	  	this.setState({menuStatus:"home"});
 	}
 
 	addSub = subreddit => {
@@ -164,7 +168,7 @@ class App extends React.Component {
 								<Listing 
 									subreddit={this.state.subreddit} 
 									specThreadChange={this.specThreadChange} 
-									singleThread={this.state.singleThread} 
+									displayUI={this.displayUI}
 								/>
 							</ul>
 							<Pagination 
@@ -204,31 +208,10 @@ class App extends React.Component {
 				case "threads":
 					renderLayout = 
 						<div>
-							threads
+							Save Threads
 						</div>;
 					break;
-				default:
-					if(singleThreadStatus != false){
-						renderLayout = 
-							<div>
-				        		<div className='activeSub'>
-				        			<h3>{"r/"+this.state.currentSub}</h3>
-				        		</div>
-				        		<ul className='listings'>
-									<Listing 
-										subreddit={this.state.subreddit} 
-										specThreadChange={this.specThreadChange}
-
-									/>
-								</ul>
-								<Pagination 
-									nextPage={this.nextPage} 
-								/>
-							</div>;
-					}
 			}
-
-
 			return(
 				<div className="container">
 					<Helmet>
@@ -238,7 +221,6 @@ class App extends React.Component {
 			      	{renderLayout}
 				</div>
 			)
-
 		}
 		// if data hasn't loaded yet, don't put anything on the page
 		else{
