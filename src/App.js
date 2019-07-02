@@ -159,6 +159,7 @@ class App extends React.Component {
 			//TODO: 
 			// Display slug of thread and add .json on url end
 			// Create new component to save sub
+			// display url on console.log first
 			switch (menuStatus) {
 				case "home":
 					renderLayout = 

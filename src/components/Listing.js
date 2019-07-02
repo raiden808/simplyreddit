@@ -11,9 +11,12 @@ class Listing extends React.Component {
 		const subredditData = this.props.subreddit.data.children; 
 		const threadText = subredditData[index].data.selftext_html;
 
+		//for saving thread
+		const threadUrl = subredditData[index].data.url;
+		console.log(threadUrl);
+		
 		//converts string html tags
 		const convert = this.map_convert(threadText.toString());
-
 		this.props.specThreadChange(convert);
 		this.props.displayUI("threadView");
 	}
