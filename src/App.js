@@ -5,6 +5,7 @@ import Search from "./components/Search"
 import {Helmet} from 'react-helmet'
 import ChangeSubreddit from './components/ChangeSubreddit'
 import Menu from './components/Menu'
+import SavedThreads from './components/SavedThreads'
 
 
 const ReturnListing = props => {
@@ -210,9 +211,7 @@ class App extends React.Component {
 					break;
 				case "threads":
 					renderLayout = 
-						<div>
-							Save Threads
-						</div>;
+						<SavedThreads />
 					break;
 			}
 			return(
