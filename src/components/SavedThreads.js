@@ -13,6 +13,8 @@ class SavedThreads extends React.Component{
 	}
 
 	// will hold the saved thread components also in charge of rendering it.
+	// use conditional display for saving here. render dpending on status of the nav 
+	// menu
 	render(){
 		return(
 			<div>
