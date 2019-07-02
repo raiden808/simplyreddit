@@ -2,6 +2,7 @@ import React from "react"
 
 class SavedThreads extends React.Component{
 
+	//display saved threads here
 	constructor(props){
 		super(props);
 

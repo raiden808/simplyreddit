@@ -24,7 +24,6 @@ class App extends React.Component {
 			currentSub   : "TalesFromTechSupport",// active sub
 			savedSub     : [], //bookmark subs
 			menuStatus   : "home",
-			savedThreads : "" //populate with url strings
 		};
 	}
 
