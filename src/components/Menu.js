@@ -1,7 +1,7 @@
 import React from "react"
 
 class Menu extends React.Component{
-	//https://codepen.io/riogrande/full/emdjLR
+	
 	constructor() {
 		super();
 		this.handleClick = this.handleClick.bind(this);

@@ -15,15 +15,16 @@ const ReturnListing = props => {
 }
 
 class App extends React.Component {
-	
+
 	constructor(props) {
 		super(props);
 		this.state = {
-			subreddit    :   "",    // data from API goes here
-			singleThread :   "",    // thread content goes here
-			currentSub   :   "TalesFromTechSupport",// active sub
-			savedSub     :   [], //bookmark subs
-			menuStatus   :   "home"
+			subreddit    : "", // data from API goes here
+			singleThread : "", // thread content goes here
+			currentSub   : "TalesFromTechSupport",// active sub
+			savedSub     : [], //bookmark subs
+			menuStatus   : "home",
+			savedThreads : "" //populate with url strings
 		};
 	}
 
