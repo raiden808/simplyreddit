@@ -142,8 +142,6 @@ class App extends React.Component {
 		this.setState({
 			menuStatus:status,
 		});
-
-		console.log(this.state.menuStatus);
 	}
 	
 
@@ -207,11 +205,12 @@ class App extends React.Component {
 							<ReturnListing  
 								returnListing={this.returnListing} 
 							/>
+							<SavedThreads menuStatus={menuStatus} />
 						</div>;
 					break;
 				case "threads":
 					renderLayout = 
-						<SavedThreads />
+						<SavedThreads menuStatus={menuStatus} />
 					break;
 			}
 			return(
