@@ -46,7 +46,7 @@ class Menu extends React.Component{
 						<li>Your Subreddits</li>
 					</a>
 					<a href="#" onClick={this.handleClick} className="threads">
-						<li>Saved Threads</li>
+						<li>Read Later</li>
 					</a>
 				</ul>
 			</div>

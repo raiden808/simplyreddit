@@ -24,6 +24,7 @@ class App extends React.Component {
 			currentSub   : "TalesFromTechSupport",// active sub
 			savedSub     : [], //bookmark subs
 			menuStatus   : "home",
+			saveThread   : [],
 		};
 	}
 
@@ -143,7 +144,14 @@ class App extends React.Component {
 			menuStatus:status,
 		});
 	}
-	
+
+	// Save a thread
+	// Todo update object on savethread.js click
+	SaveThread = thread =>{
+		this.setState({ saveThread:[...this.state.saveThread,thread] })
+
+		//let newSub = [...this.state.savedSub,subreddit]
+	}
 
 	render() {
 		// when data from Reddit successfully loads
