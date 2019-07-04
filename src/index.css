@@ -154,6 +154,12 @@ ul.listings {
   outline: none;
 }
 
+.save_btn{
+  padding: 0px 11px;
+  margin: 0px;
+  background: #282828;
+}
+
 .searchArea {
     text-align: center;
 }

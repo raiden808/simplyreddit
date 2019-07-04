@@ -6,6 +6,7 @@ import {Helmet} from 'react-helmet'
 import ChangeSubreddit from './components/ChangeSubreddit'
 import Menu from './components/Menu'
 import SavedThreads from './components/SavedThreads'
+import SaveThread from './components/SaveThread'
 
 
 const ReturnListing = props => {
@@ -210,15 +211,12 @@ class App extends React.Component {
 							<div 
 								dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
 							</div>
-							<ReturnListing  
-								returnListing={this.returnListing} 
-							/>
-							<SavedThreads menuStatus={menuStatus} />
+							<SaveThread menuStatus={menuStatus} />
 						</div>;
 					break;
 				case "threads":
 					renderLayout = 
-						<SavedThreads menuStatus={menuStatus} />
+						<SaveThread />
 					break;
 			}
 			return(

@@ -7,7 +7,9 @@ class SaveThread extends React.Component{
 
 	render(){
 		return(
-
+			<div>
+				<a href="#" className="smpl_btn save_btn">Read Later</a>
+			</div>
 		);
 	}
 } 
