@@ -154,6 +154,8 @@ class App extends React.Component {
 		//let newSub = [...this.state.savedSub,subreddit]
 	}
 
+
+
 	render() {
 		// when data from Reddit successfully loads
 		if (this.state.subreddit) {
@@ -211,6 +213,7 @@ class App extends React.Component {
 							<div 
 								dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
 							</div>
+							{/*Set a current thread url here. add it like a state.*/}
 							<SaveThread menuStatus={menuStatus} />
 						</div>;
 					break;
