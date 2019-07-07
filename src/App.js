@@ -11,7 +11,7 @@ import SaveThread from './components/SaveThread'
 
 const ReturnListing = props => {
   return(
-    <a href="#" onClick={props.returnListing} >Back</a>
+    <a href="#" className="smpl_btn read_btn" onClick={props.returnListing} >Back</a>
   )
 }
 
@@ -20,12 +20,13 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			subreddit    : "", // data from API goes here
-			singleThread : "", // thread content goes here
-			currentSub   : "TalesFromTechSupport",// active sub
-			savedSub     : [], //bookmark subs
-			menuStatus   : "home",
-			saveThread   : [],
+			subreddit        : "", // data from API goes here
+			singleThread     : "", // thread content goes here
+			currentSub       : "TalesFromTechSupport",// active sub
+			savedSub         : [], //bookmark subs
+			menuStatus       : "home",
+			saveThread       : [],
+			singleThreadUrl  : "",
 		};
 	}
 
@@ -154,7 +155,10 @@ class App extends React.Component {
 		//let newSub = [...this.state.savedSub,subreddit]
 	}
 
-
+	// active thead url
+	activeThreadUrl = url =>{
+		this.setState({singleThreadUrl:url});
+	}
 
 	render() {
 		// when data from Reddit successfully loads
@@ -207,13 +211,13 @@ class App extends React.Component {
 				case "threadView":
 					renderLayout = 
 						<div className="single_thread">
-							<ReturnListing  
-								returnListing={this.returnListing} 
-							/>
 							<div 
 								dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
 							</div>
 							{/*Set a current thread url here. add it like a state.*/}
+							<ReturnListing  
+								returnListing={this.returnListing} 
+							/>
 							<SaveThread menuStatus={menuStatus} />
 						</div>;
 					break;
