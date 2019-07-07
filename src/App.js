@@ -158,6 +158,8 @@ class App extends React.Component {
 	// active thead url
 	activeThreadUrl = url =>{
 		this.setState({singleThreadUrl:url});
+
+		console.log("Current State URL"+this.state.singleThreadUrl)
 	}
 
 	render() {
