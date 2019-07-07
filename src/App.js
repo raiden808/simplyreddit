@@ -186,6 +186,7 @@ class App extends React.Component {
 									subreddit={this.state.subreddit} 
 									specThreadChange={this.specThreadChange} 
 									displayUI={this.displayUI}
+									activeThreadUrl={this.activeThreadUrl}
 								/>
 							</ul>
 							<Pagination 
