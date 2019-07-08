@@ -147,19 +147,19 @@ class App extends React.Component {
 		});
 	}
 
+	// save thread modules
 	// Save a thread
-	// Todo update object on savethread.js click
+	// save singleTHreadUrl into array
 	SaveThread = thread =>{
 		this.setState({ saveThread:[...this.state.saveThread,thread] })
 
 		//let newSub = [...this.state.savedSub,subreddit]
 	}
 
-	// active thead url
 	activeThreadUrl = url =>{
 		this.setState({singleThreadUrl:url});
 
-		console.log("Current State URL"+this.state.singleThreadUrl)
+		//console.log("Current State URL"+this.state.singleThreadUrl)
 	}
 
 	render() {
@@ -221,7 +221,11 @@ class App extends React.Component {
 							<ReturnListing  
 								returnListing={this.returnListing} 
 							/>
-							<SaveThread menuStatus={menuStatus} />
+							<SaveThread 
+								SaveThread={SaveThread} 
+								menuStatus={menuStatus} 
+								activeThreadUrl={this.state.activeThreadUrl}
+							/>
 						</div>;
 					break;
 				case "threads":

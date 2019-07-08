@@ -5,6 +5,11 @@ class SaveThread extends React.Component{
 		super(props);
 	}
 
+	// saves activeThreadURL 
+	handleClick = () => {
+
+	}
+
 	render(){
 		return(
 			<a href="#" className="smpl_btn read_btn">Save</a>
