@@ -156,6 +156,7 @@ class App extends React.Component {
 		let newSub = [...this.state.saveThread,threadUrl]
 	}
 
+	// save thread url along with title
 	activeThreadUrl = url =>{
 		this.setState({singleThreadUrl:url});
 
