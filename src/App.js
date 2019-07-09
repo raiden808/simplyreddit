@@ -150,10 +150,10 @@ class App extends React.Component {
 	// save thread modules
 	// Save a thread
 	// save singleTHreadUrl into array
-	SaveThread = thread =>{
-		this.setState({ saveThread:[...this.state.saveThread,thread] })
+	SaveThread = threadUrl =>{
+		this.setState({ saveThread:[...this.state.saveThread,threadUrl] })
 
-		//let newSub = [...this.state.savedSub,subreddit]
+		let newSub = [...this.state.saveThread,threadUrl]
 	}
 
 	activeThreadUrl = url =>{
@@ -221,10 +221,10 @@ class App extends React.Component {
 							<ReturnListing  
 								returnListing={this.returnListing} 
 							/>
-							<SaveThread 
-								SaveThread={SaveThread} 
+							<SaveThread
 								menuStatus={menuStatus} 
-								activeThreadUrl={this.state.activeThreadUrl}
+								SaveThread={this.SaveThread}
+								singleThreadUrl={this.state.singleThreadUrl}
 							/>
 						</div>;
 					break;
