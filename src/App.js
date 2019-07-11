@@ -50,7 +50,9 @@ class App extends React.Component {
 		}
 	}
 
-	//load selected sub
+	/*
+	* Subreddit Rending Area
+	*/
 	fetchPosts = async (subreddit, nextPage = "") => {
 		try {
 			// fetch posts for the provided subreddit, then save them to the state
@@ -98,7 +100,10 @@ class App extends React.Component {
 		return this.fetchPosts(this.state.currentSub, `&after=${nextPageConstant}`);
 	};
 
-	//render textContent on click of subreddit
+
+	/*
+	* Thread Rendering area
+	*/
 	specThreadChange = thread =>{
 		this.setState({ singleThread:thread})
 	}
@@ -109,8 +114,9 @@ class App extends React.Component {
 		this.setState({menuStatus:"home"});
 	}
 
-
-	//search and add
+	/*
+	* Sub Manipulation Area
+	*/ 
 	searchSub = (subreddit) =>{
 		this.setState({ currentSub:subreddit})
 		this.fetchPosts(subreddit);
@@ -140,27 +146,34 @@ class App extends React.Component {
 	  	localStorage.setItem("localSub",JSON.stringify(this.state.savedSub))
 	}
 
-	//menu page rendering
-	displayUI = (status) =>{
-		this.setState({
-			menuStatus:status,
-		});
-	}
+	
 
-	// save thread modules
-	// Save a thread
-	// save singleTHreadUrl into array
+	/*
+	* Save Thread Area
+	*/ 
+	// save single thread url along with title
 	SaveThread = threadUrl =>{
 		this.setState({ saveThread:[...this.state.saveThread,threadUrl] })
 
 		let newSub = [...this.state.saveThread,threadUrl]
 	}
 
-	// save thread url along with title
+	
+	// store active thread into state
 	activeThreadUrl = url =>{
+		
 		this.setState({singleThreadUrl:url});
 
 		//console.log("Current State URL"+this.state.singleThreadUrl)
+	}
+
+	/*
+	* Menu Page Rendering Area
+	*/ 
+	displayUI = (status) =>{
+		this.setState({
+			menuStatus:status,
+		});
 	}
 
 	render() {
