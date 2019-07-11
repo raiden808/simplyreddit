@@ -146,8 +146,6 @@ class App extends React.Component {
 	  	localStorage.setItem("localSub",JSON.stringify(this.state.savedSub))
 	}
 
-	
-
 	/*
 	* Save Thread Area
 	*/ 

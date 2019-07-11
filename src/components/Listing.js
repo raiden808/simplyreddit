@@ -10,16 +10,22 @@ class Listing extends React.Component {
 		const index = e.target.getAttribute('data-index');
 		const subredditData = this.props.subreddit.data.children; 
 
+		//convert and render text of subreddit
 		const threadText = subredditData[index].data.selftext_html;
 		const convert = this.map_convert(threadText.toString());
-		//set state of single thread view
 		this.props.specThreadChange(convert);
 		
 
 
-		//for saving thread
+		//Returns title and URL
+		const threadId    = subredditData[index].data.id;
 		const threadTitle = subredditData[index].data.title;
-		const threadUrl = subredditData[index].data.url;
+		const threadUrl   = subredditData[index].data.url;
+
+		let threadDetails = [];
+
+		//threadDetails[threadId] = 
+
 		// multi dimensional array title and URL
 		this.props.activeThreadUrl(threadUrl);
 
@@ -27,12 +33,6 @@ class Listing extends React.Component {
 
 		// update the menu status
 		this.props.displayUI("threadView");
-	}
-
-	activeThreadObject = (thread) =>{
-
-
-		return 
 	}
 
 	activeThreadText = (thread) =>{
