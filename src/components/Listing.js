@@ -17,19 +17,24 @@ class Listing extends React.Component {
 		
 
 
-		//Returns title and URL
-		const threadId    = subredditData[index].data.id;
-		const threadTitle = subredditData[index].data.title;
-		const threadUrl   = subredditData[index].data.url;
+		// //Returns title and URL
+		// const threadId    = subredditData[index].data.id;
+		// const threadTitle = subredditData[index].data.title;
+		// const threadUrl   = subredditData[index].data.url;
 
-		let threadDetails = [];
+		// let threadDetails = [];
 
-		//threadDetails[threadId] = 
+		// let threadObject = new Object();
+		// threadObject.title = threadTitle;
+		// threadObject.url   = threadUrl;
+
+		// threadDetails[threadId] = threadObject;
+
 
 		// multi dimensional array title and URL
-		this.props.activeThreadUrl(threadUrl);
+		this.props.CurrentActiveThreadObject(this.activeThreadObject(subredditData[index].data));
 
-		console.log(subredditData[index].data);
+		//console.log(subredditData[index].data);
 
 		// update the menu status
 		this.props.displayUI("threadView");
@@ -37,6 +42,28 @@ class Listing extends React.Component {
 
 	activeThreadText = (thread) =>{
 		
+	}
+
+	activeThreadObject = (threadData) =>{
+		//Returns title and URL
+		const threadId    = threadData.id;
+		const threadTitle = threadData.title;
+		const threadUrl   = threadData.url;
+
+		let threadDetails = [];
+
+		// set title and url for 2d array
+		let threadObject = new Object();
+		threadObject.title = threadTitle;
+		threadObject.url   = threadUrl;
+
+		threadDetails[threadId] = threadObject;
+
+		//console.log(threadDetails);
+
+		//return "test";
+
+		return threadDetails;
 	}
 
 	//converts string html tags into readable text

@@ -20,13 +20,13 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			subreddit        : "", // data from API goes here
-			singleThread     : "", // thread content goes here
-			currentSub       : "TalesFromTechSupport",// active sub
-			savedSub         : [], //bookmark subs
-			menuStatus       : "home",
-			saveThread       : [],
-			singleThreadUrl  : "",
+			subreddit            : "", // data from API goes here
+			singleThread         : "", // thread content goes here
+			currentSub           : "TalesFromTechSupport",// active sub
+			savedSub             : [], //bookmark subs
+			menuStatus           : "home",
+			saveThread           : [],
+			singleThreadDetails  : [],
 		};
 	}
 
@@ -158,9 +158,13 @@ class App extends React.Component {
 
 	
 	// store active thread into state
-	activeThreadUrl = url =>{
+	CurrentActiveThreadObject = data =>{
+
+		console.log(data)
 		
-		this.setState({singleThreadUrl:url});
+		this.setState({
+			singleThreadDetails:[...this.state.singleThreadDetails,data] 
+		});
 
 		//console.log("Current State URL"+this.state.singleThreadUrl)
 	}
@@ -200,7 +204,7 @@ class App extends React.Component {
 									subreddit={this.state.subreddit} 
 									specThreadChange={this.specThreadChange} 
 									displayUI={this.displayUI}
-									activeThreadUrl={this.activeThreadUrl}
+									CurrentActiveThreadObject={this.CurrentActiveThreadObject}
 								/>
 							</ul>
 							<Pagination 
@@ -236,7 +240,7 @@ class App extends React.Component {
 							<SaveThread
 								menuStatus={menuStatus} 
 								SaveThread={this.SaveThread}
-								singleThreadUrl={this.state.singleThreadUrl}
+								singleThreadDetails={this.state.singleThreadDetails}
 							/>
 						</div>;
 					break;
