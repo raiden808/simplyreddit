@@ -26,7 +26,7 @@ class App extends React.Component {
 			savedSub             : [], //bookmark subs
 			menuStatus           : "home",
 			saveThread           : [],
-			singleThreadDetails  : [],
+			singleThreadDetails  : {},
 		};
 	}
 
@@ -160,9 +160,16 @@ class App extends React.Component {
 	// store active thread into state
 	CurrentActiveThreadObject = data =>{
 
-		// working
-		let CurrentDetails = data;
-		this.setState({ singleThreadDetails:[...this.state.singleThreadDetails,CurrentDetails] })
+		let threadObject = new Object();
+		let finalObject = {};
+
+		threadObject.title = data[1];
+		threadObject.url = data[2];
+
+		finalObject[data[0]] = threadObject;
+		//threadObject.push(data);
+
+		this.setState({ singleThreadDetails:{...this.state.singleThreadDetails,finalObject }})
 
 	}
 
