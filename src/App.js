@@ -25,7 +25,7 @@ class App extends React.Component {
 			currentSub           : "TalesFromTechSupport",// active sub
 			savedSub             : [], //bookmark subs
 			menuStatus           : "home",
-			saveThread           : {},
+			saveThread           : [],
 			singleThreadDetails  : {},
 		};
 	}
@@ -156,7 +156,7 @@ class App extends React.Component {
 		console.log(threadObject)
 
 		this.setState({ 
-			saveThread:{...this.state.saveThread['finalObject'],threadObject} 
+			saveThread:[...this.state.saveThread,threadObject] 
 		})
 
 		//let newSub = [...this.state.saveThread,threadUrl]
@@ -175,13 +175,12 @@ class App extends React.Component {
 
 		let threadObject = new Object();
 		
-		let finalObject = {};
+		threadObject.id = data[0];
 		threadObject.title = data[1];
 		threadObject.url = data[2];
-		finalObject[data[0]] = threadObject;
 
 
-		this.setState({ singleThreadDetails:{...this.state.singleThreadDetails,finalObject }})
+		this.setState({ singleThreadDetails:{...this.state.singleThreadDetails,threadObject }})
 
 	}
 
