@@ -25,7 +25,7 @@ class App extends React.Component {
 			currentSub           : "TalesFromTechSupport",// active sub
 			savedSub             : [], //bookmark subs
 			menuStatus           : "home",
-			saveThread           : [],
+			saveThread           : {},
 			singleThreadDetails  : {},
 		};
 	}
@@ -150,24 +150,36 @@ class App extends React.Component {
 	* Save Thread Area
 	*/ 
 	// save single thread url along with title
-	SaveThread = threadUrl =>{
-		this.setState({ saveThread:[...this.state.saveThread,threadUrl] })
+	// reference: https://stackoverflow.com/questions/41609615/how-to-add-a-new-key-value-to-react-js-state-array
+	SaveThread = threadObject =>{
 
-		let newSub = [...this.state.saveThread,threadUrl]
+		console.log(threadObject)
+
+		this.setState({ 
+			saveThread:{...this.state.saveThread['finalObject'],threadObject} 
+		})
+
+		//let newSub = [...this.state.saveThread,threadUrl]
 	}
 
 	
 	// store active thread into state
 	CurrentActiveThreadObject = data =>{
 
-		let threadObject = new Object();
-		let finalObject = {};
+		// Working
+		// let threadObject = new Object();
+		// let finalObject = {};
+		// threadObject.title = data[1];
+		// threadObject.url = data[2];
+		// finalObject[data[0]] = threadObject;
 
+		let threadObject = new Object();
+		
+		let finalObject = {};
 		threadObject.title = data[1];
 		threadObject.url = data[2];
-
 		finalObject[data[0]] = threadObject;
-		//threadObject.push(data);
+
 
 		this.setState({ singleThreadDetails:{...this.state.singleThreadDetails,finalObject }})
 

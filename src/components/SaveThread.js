@@ -10,7 +10,7 @@ class SaveThread extends React.Component{
 	handleClick = () => {
 
 		//save thread via props
-		this.props.SaveThread(this.props.singleThreadUrl);
+		this.props.SaveThread(this.props.singleThreadDetails);
 	}
 
 	render(){
