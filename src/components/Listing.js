@@ -3,6 +3,8 @@ class Listing extends React.Component {
 
 	constructor(props) {
 	    super(props);
+
+	    this.displayThread = this.displayThread.bind(this);
 	}
 
 	displayThread = (e) =>{
@@ -53,15 +55,17 @@ class Listing extends React.Component {
 		let threadDetails = [];
 
 		// set title and url for 2d array
-		let threadObject = new Object();
-		threadObject.title = threadTitle;
-		threadObject.url   = threadUrl;
+		// let threadObject = new Object();
+		// threadObject.title = threadTitle;
+		// threadObject.url   = threadUrl;
 
-		threadDetails[threadId] = threadObject;
+		// threadDetails[threadId] = threadObject;
 
-		//console.log(threadDetails);
+		// let threadDetails = [];
 
-		//return "test";
+		threadDetails.push(threadId);
+		threadDetails.push(threadTitle);
+		threadDetails.push(threadUrl);
 
 		return threadDetails;
 	}

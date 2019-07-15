@@ -160,13 +160,10 @@ class App extends React.Component {
 	// store active thread into state
 	CurrentActiveThreadObject = data =>{
 
-		console.log(data)
-		
-		this.setState({
-			singleThreadDetails:[...this.state.singleThreadDetails,data] 
-		});
+		// working
+		let CurrentDetails = data;
+		this.setState({ singleThreadDetails:[...this.state.singleThreadDetails,CurrentDetails] })
 
-		//console.log("Current State URL"+this.state.singleThreadUrl)
 	}
 
 	/*
