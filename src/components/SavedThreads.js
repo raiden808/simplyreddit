@@ -16,28 +16,11 @@ class SavedThreads extends React.Component {
 	// menu
 	// display using this: https://medium.com/javascript-in-plain-english/how-to-loop-through-arrays-in-react-3eaa8a14445
 	render(){
-		const menuStatus = this.props.menuStatus;
-		let renderLayout;
 
-		switch (menuStatus) {
-			case "threadView":
-				renderLayout = 
-					<div>
-						<span>Save Thread</span>
-					</div>;
-				break;
-			default:
-				renderLayout = 
-					<div>
-						<span>Display Threads</span>
-					</div>;
-				break;
-		}
-
-		console.log(menuStatus);
+		console.log(this.props.savedThread);
 
 		return(
-			<div>{renderLayout}</div>
+			<div></div>
 		)
 	}
 

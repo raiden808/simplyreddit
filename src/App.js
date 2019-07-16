@@ -25,7 +25,7 @@ class App extends React.Component {
 			currentSub           : "TalesFromTechSupport",// active sub
 			savedSub             : [], //bookmark subs
 			menuStatus           : "home",
-			saveThread           : [],
+			savedThread          : [],
 			singleThreadDetails  : {},
 		};
 	}
@@ -149,35 +149,27 @@ class App extends React.Component {
 	/*
 	* Save Thread Area
 	*/ 
-	// save single thread url along with title
+	// save current active thread id,title and url
+	// save to local storage
 	SaveThread = threadObject =>{
 
-		console.log(threadObject)
-
 		this.setState({ 
-			saveThread:[...this.state.saveThread,threadObject] 
+			savedThread:[...this.state.savedThread,threadObject] 
 		})
 
-		//let newSub = [...this.state.saveThread,threadUrl]
+		//updates local storage
+	  	localStorage.setItem("savedThread",JSON.stringify(this.state.savedThread))
 	}
 
 	
 	// store active thread into state
 	CurrentActiveThreadObject = data =>{
 
-		// Working
-		// let threadObject = new Object();
-		// let finalObject = {};
-		// threadObject.title = data[1];
-		// threadObject.url = data[2];
-		// finalObject[data[0]] = threadObject;
-
 		let threadObject = new Object();
 		
 		threadObject.id = data[0];
 		threadObject.title = data[1];
 		threadObject.url = data[2];
-
 
 		this.setState({ singleThreadDetails:{...this.state.singleThreadDetails,threadObject }})
 
@@ -252,7 +244,7 @@ class App extends React.Component {
 								returnListing={this.returnListing} 
 							/>
 							<SaveThread
-								menuStatus={menuStatus} 
+								menuStatus={menuStatus}
 								SaveThread={this.SaveThread}
 								singleThreadDetails={this.state.singleThreadDetails}
 							/>
@@ -260,7 +252,9 @@ class App extends React.Component {
 					break;
 				case "threads":
 					renderLayout = 
-						<SaveThread />
+						<SavedThreads  
+							savedThread={this.state.savedThread}
+						/>
 					break;
 			}
 			return(
