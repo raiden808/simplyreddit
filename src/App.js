@@ -150,7 +150,6 @@ class App extends React.Component {
 	* Save Thread Area
 	*/ 
 	// save single thread url along with title
-	// reference: https://stackoverflow.com/questions/41609615/how-to-add-a-new-key-value-to-react-js-state-array
 	SaveThread = threadObject =>{
 
 		console.log(threadObject)
