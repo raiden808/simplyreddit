@@ -1,5 +1,9 @@
 import React from "react"
 
+
+
+
+
 class SavedThreads extends React.Component {
 
 	//display saved threads here
@@ -12,8 +16,12 @@ class SavedThreads extends React.Component {
 	// menu
 	// display using this: https://medium.com/javascript-in-plain-english/how-to-loop-through-arrays-in-react-3eaa8a14445
 	render(){
+		
+		const saveThread = this.props.savedThread;
 
-		console.log(this.props.savedThread);
+		const subredditPosts = saveThread.map(key  => {
+			console.log(key.threadObject.id)
+		});
 
 		return(
 			<div></div>
