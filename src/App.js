@@ -35,9 +35,10 @@ class App extends React.Component {
 		const defaultSubreddit = this.state.currentSub;
 		this.fetchPosts(defaultSubreddit);
 
-		let retrievedObject = JSON.parse(localStorage.getItem('localSub'));
+		let getSavedSub      = JSON.parse(localStorage.getItem('localSub'));
+		let getSavedThread   = JSON.parse(localStorage.getItem('savedThread'));
 
-		//if no local storage
+		//assign saved thread and sub on page load
 		if(localStorage.getItem('localSub') === null){
 			this.setState({ 
 				savedSub: ["TalesFromTechSupport","MaliciousCompliance","IDontWorkHereLady"]
@@ -45,8 +46,14 @@ class App extends React.Component {
 		}
 		else{
 			this.setState({ 
-				savedSub: retrievedObject
+				savedSub: getSavedSub
 			});
+		}
+
+		if(localStorage.getItem('localSub') !== null){
+			this.setState({ 
+				savedThread:getSavedThread
+			})
 		}
 	}
 
@@ -159,6 +166,8 @@ class App extends React.Component {
 
 		//updates local storage
 	  	localStorage.setItem("savedThread",JSON.stringify(this.state.savedThread))
+
+
 	}
 
 	

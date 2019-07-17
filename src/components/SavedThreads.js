@@ -5,10 +5,6 @@ class SavedThreads extends React.Component {
 	//display saved threads here
 	constructor(props){
 		super(props);
-
-		this.state = {
-			savedThreads : ""
-		}
 	}
 
 	// will hold the saved thread components also in charge of rendering it.
