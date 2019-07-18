@@ -12,19 +12,39 @@ class SavedThreads extends React.Component {
 	}
 
 	// will hold the saved thread components also in charge of rendering it.
-	// use conditional display for saving here. render dpending on status of the nav 
-	// menu
-	// display using this: https://medium.com/javascript-in-plain-english/how-to-loop-through-arrays-in-react-3eaa8a14445
+	// change app.js state onclick of button
+	// use specific thread function
 	render(){
 		
 		const saveThread = this.props.savedThread;
 
+		console.log(saveThread)
+
 		const subredditPosts = saveThread.map(key  => {
-			console.log(key.threadObject.id)
+			// console.log(key.threadObject.id)
+			console.log(key.threadObject.url)
+			return(
+				<li key={key.threadObject.id}>
+	            	<button data-url={key.threadObject.url}>
+	            		{key.threadObject.title}
+	            	</button>
+	            </li>
+			)	
 		});
 
 		return(
-			<div></div>
+			<div>
+				<div className="activeSub">
+					<h3>
+						Save threads
+					</h3>
+				</div>
+				<div className='bookmark_subs'>
+					<ul>	
+						{subredditPosts}
+					</ul>
+				</div>
+			</div>
 		)
 	}
 
