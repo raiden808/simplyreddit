@@ -1,9 +1,5 @@
 import React from "react"
 
-
-
-
-
 class SavedThreads extends React.Component {
 
 	//display saved threads here
@@ -14,18 +10,41 @@ class SavedThreads extends React.Component {
 	// will hold the saved thread components also in charge of rendering it.
 	// change app.js state onclick of button
 	// use specific thread function
+
+	// fetchSavedThread = async (url) =>{
+	// 	try{
+
+	// 	}
+	// 	catch(error){
+	// 		console.log(error);
+	// 	}
+	// }
+
+
+	// retrive url on click
+	handleThreadClick = e =>{
+
+		let targetUrl =  e.target.dataset.url;
+
+		console.log(targetUrl);
+
+	}
+
 	render(){
 		
 		const saveThread = this.props.savedThread;
 
-		console.log(saveThread)
+		//console.log(saveThread)
 
 		const subredditPosts = saveThread.map(key  => {
 			// console.log(key.threadObject.id)
-			console.log(key.threadObject.url)
+			//console.log(key.threadObject.url)
 			return(
 				<li key={key.threadObject.id}>
-	            	<button data-url={key.threadObject.url}>
+	            	<button 
+	            		data-url={key.threadObject.url}
+	            		onClick={this.handleThreadClick}
+	            	>
 	            		{key.threadObject.title}
 	            	</button>
 	            </li>
