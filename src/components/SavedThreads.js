@@ -1,9 +1,25 @@
 import React from "react"
 
+const ReturnThreads = props =>{
+  	return(
+		<a 
+			href="#" 
+			className="smpl_btn read_btn" 
+			onClick={props.handleReturnThread}
+		>
+			Back
+		</a>
+	)
+}
+
 class SavedThreads extends React.Component {
 
 	constructor(props){
 		super(props);
+
+		this.state = {
+			renderText : "", // thread content goes here
+		};
 	}
 
 	// retrive url on click
@@ -11,22 +27,15 @@ class SavedThreads extends React.Component {
 
 		let targetUrl =  e.target.dataset.url;
 
-		this.state = {
-			renderThread : "", // thread content goes here
-		};
-
-		console.log(targetUrl);
-
+		// save thread to state
 		this.fetchSavedThread(targetUrl);
-
-		console.log(this.state.renderThread);
-
 	}
 
-	// will hold the saved thread components also in charge of rendering it.
-	// change app.js state onclick of button
-	// use specific thread function
-	// render save thread
+	//properly convert html tags
+	renderSelfText = (textHtml) =>{
+		return textHtml.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+	}
+
 	fetchSavedThread = async (url) =>{
 		try {
 			const threadResponse = await fetch(
@@ -40,7 +49,13 @@ class SavedThreads extends React.Component {
 			const returnedData = await threadResponse.json();
 
 			// return text
-			return this.setState({ renderThread: returnedData[0].data.children[0].data.selftext});
+			return this.setState(
+				{ 
+					renderText: this.renderSelfText(
+						returnedData[0].data.children[0].data.selftext_html
+					)
+				}
+			);
 		} 
 
 		catch (error) {
@@ -48,9 +63,17 @@ class SavedThreads extends React.Component {
 		}
 	}
 
+	// reset state
+	handleReturnThread = () =>{
+		this.setState({ renderText:""});
+		alert("test");
+		console.log("update");
+	}
+
 	render(){
 		
 		const saveThread = this.props.savedThread;
+		let   renderLayout = "";
 
 		const subredditPosts = saveThread.map(key  => {
 			return(
@@ -65,18 +88,33 @@ class SavedThreads extends React.Component {
 			)	
 		});
 
+		if(this.state.renderText != ""){
+			renderLayout = 
+				<div>
+					<ReturnThreads />
+					<div 
+						dangerouslySetInnerHTML={{__html: this.state.renderText}}>
+					</div>
+				</div>
+		} else{
+			renderLayout = 
+				<div>
+					<div className="activeSub">
+						<h3>
+							Save threads
+						</h3>
+					</div>
+					<div className='bookmark_subs'>
+						<ul>	
+							{subredditPosts}
+						</ul>
+					</div>
+				</div>;
+		}
+
 		return(
 			<div>
-				<div className="activeSub">
-					<h3>
-						Save threads
-					</h3>
-				</div>
-				<div className='bookmark_subs'>
-					<ul>	
-						{subredditPosts}
-					</ul>
-				</div>
+				{renderLayout}
 			</div>
 		)
 	}
