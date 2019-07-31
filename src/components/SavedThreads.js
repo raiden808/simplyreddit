@@ -1,6 +1,6 @@
 import React from "react"
 
-const ReturnThreads = props =>{
+const ReturnThreads = props => {
   	return(
 		<a 
 			href="#" 
@@ -18,7 +18,7 @@ class SavedThreads extends React.Component {
 		super(props);
 
 		this.state = {
-			renderText : "", // thread content goes here
+			renderText : [], // thread content goes here
 		};
 	}
 
@@ -49,13 +49,21 @@ class SavedThreads extends React.Component {
 			const returnedData = await threadResponse.json();
 
 			// return text
+			// return this.setState(
+			// 	{ 
+			// 		renderText: this.renderSelfText(
+			// 			returnedData[0].data.children[0].data
+			// 		)
+			// 	}
+			// );
+
 			return this.setState(
 				{ 
-					renderText: this.renderSelfText(
-						returnedData[0].data.children[0].data.selftext_html
-					)
+					renderText: [...this.state.renderText,returnedData[0].data.children[0].data]
 				}
 			);
+
+
 		} 
 
 		catch (error) {
@@ -66,8 +74,6 @@ class SavedThreads extends React.Component {
 	// reset state
 	handleReturnThread = () =>{
 		this.setState({ renderText:""});
-		alert("test");
-		console.log("update");
 	}
 
 	render(){
@@ -91,9 +97,12 @@ class SavedThreads extends React.Component {
 		if(this.state.renderText != ""){
 			renderLayout = 
 				<div>
-					<ReturnThreads />
+					<ReturnThreads handleReturnThread={this.handleReturnThread} />
+					<div className='activeSub'>
+			        	<h3>{this.state.renderText[0].title}</h3>
+			        </div>
 					<div 
-						dangerouslySetInnerHTML={{__html: this.state.renderText}}>
+						dangerouslySetInnerHTML={{__html: this.renderSelfText(this.state.renderText[0].selftext_html)}}>
 					</div>
 				</div>
 		} else{

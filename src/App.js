@@ -245,6 +245,9 @@ class App extends React.Component {
 				case "threadView":
 					renderLayout = 
 						<div className="single_thread">
+							<div className='activeSub'>
+					        	<h3>{this.state.singleThreadDetails.threadObject.title}</h3>
+					        </div>
 							<div 
 								dangerouslySetInnerHTML={{__html: this.state.singleThread}}>
 							</div>
