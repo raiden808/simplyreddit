@@ -48,15 +48,6 @@ class SavedThreads extends React.Component {
 
 			const returnedData = await threadResponse.json();
 
-			// return text
-			// return this.setState(
-			// 	{ 
-			// 		renderText: this.renderSelfText(
-			// 			returnedData[0].data.children[0].data
-			// 		)
-			// 	}
-			// );
-
 			return this.setState(
 				{ 
 					renderText: [...this.state.renderText,returnedData[0].data.children[0].data]
@@ -74,6 +65,17 @@ class SavedThreads extends React.Component {
 	// reset state
 	handleReturnThread = () =>{
 		this.setState({ renderText:""});
+	}
+
+	//handle button release on long press
+	handleButtonPress (subreddit) {
+    	this.buttonPressTimer = setTimeout(() => 
+    		this.props.removeSub(subreddit)
+    	, 1500);
+	}
+
+	handleButtonRelease (subreddit) {
+		clearTimeout(this.buttonPressTimer);
 	}
 
 	render(){
