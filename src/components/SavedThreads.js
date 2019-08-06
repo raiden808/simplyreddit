@@ -68,10 +68,10 @@ class SavedThreads extends React.Component {
 	}
 
 	//handle button release on long press
-	handleButtonPress (subreddit) {
-    	this.buttonPressTimer = setTimeout(() => 
-    		this.props.removeSub(subreddit)
-    	, 1500);
+	handleButtonPress (thread) {
+    	// this.buttonPressTimer = setTimeout(() => 
+    	// 	// this.props.removeSub(subreddit)
+    	// , 1500);
 	}
 
 	handleButtonRelease (subreddit) {
@@ -83,7 +83,16 @@ class SavedThreads extends React.Component {
 		const saveThread = this.props.savedThread;
 		let   renderLayout = "";
 
-		const subredditPosts = saveThread.map(key  => {
+		// // check the index of object
+		// saveThread.forEach(function(index,element) {
+		// 	// console.log(element);
+		//  //  	console.log(index);
+		// });
+
+		//**TODO: Delete object state by index.
+		const subredditPosts = saveThread.map((key,index)  => {
+			// thread deleting for use `index` for ref.
+			console.log(index);
 			return(
 				<li key={key.threadObject.id}>
 	            	<button 
@@ -93,7 +102,7 @@ class SavedThreads extends React.Component {
 	            		{key.threadObject.title}
 	            	</button>
 	            </li>
-			)	
+			)
 		});
 
 		if(this.state.renderText != ""){

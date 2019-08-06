@@ -162,6 +162,7 @@ class App extends React.Component {
 
 		let getSavedThread   = JSON.parse(localStorage.getItem('savedThread'));
 
+		// save thread object using spread
 		getSavedThread = [...getSavedThread,threadObject];
 
 		//updates local storage
