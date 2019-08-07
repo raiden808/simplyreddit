@@ -187,6 +187,17 @@ class App extends React.Component {
 
 	}
 
+	//remove saved thread
+	removeSaveThread =  index =>{
+			// const i = 2
+	  //   	// remove specific index
+			// const filteredItems = saveThread.slice(0, i).concat(saveThread.slice(i + 1, saveThread.length))
+
+			// console.log(filteredItems)
+	}
+
+
+
 	/*
 	* Menu Page Rendering Area
 	*/ 

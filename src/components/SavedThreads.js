@@ -89,6 +89,13 @@ class SavedThreads extends React.Component {
 		//  //  	console.log(index);
 		// });
 
+		//const items = ['a', 'b', 'c', 'd', 'e', 'f'];
+		const i = 2;
+		const filteredItems = saveThread.slice(0, i).concat(saveThread.slice(i + 1, saveThread.length));
+
+		console.log(filteredItems);
+
+
 		//**TODO: Delete object state by index.
 		const subredditPosts = saveThread.map((key,index)  => {
 			// thread deleting for use `index` for ref.
