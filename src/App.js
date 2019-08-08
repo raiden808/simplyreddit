@@ -188,13 +188,19 @@ class App extends React.Component {
 	}
 
 	//remove saved thread
-	removeSaveThread =  index =>{
-			// const i = 2
-	  //   	// remove specific index
-			// const filteredItems = saveThread.slice(0, i).concat(saveThread.slice(i + 1, saveThread.length))
+	removeSaveThread = index =>{
 
-			// console.log(filteredItems)
+		const SaveThread = this.state.savedThread;
+
+		const valueToRemove = index;
+		const filteredItems = SaveThread.filter(function(item,key) {
+			// remove array index via key
+			console.log(key)
+		  return key !== valueToRemove
+		})
 	}
+
+	
 
 
 
@@ -280,6 +286,7 @@ class App extends React.Component {
 					renderLayout = 
 						<SavedThreads  
 							savedThread={this.state.savedThread}
+							removeSaveThread={this.removeSaveThread}
 						/>
 					break;
 			}

@@ -68,10 +68,10 @@ class SavedThreads extends React.Component {
 	}
 
 	//handle button release on long press
-	handleButtonPress (thread) {
-    	// this.buttonPressTimer = setTimeout(() => 
-    	// 	// this.props.removeSub(subreddit)
-    	// , 1500);
+	handleButtonPress (index) {
+    	this.buttonPressTimer = setTimeout(() => 
+    		this.props.removeSaveThread(index)
+    	, 1500);
 	}
 
 	handleButtonRelease (subreddit) {
@@ -90,21 +90,27 @@ class SavedThreads extends React.Component {
 		// });
 
 		//const items = ['a', 'b', 'c', 'd', 'e', 'f'];
-		const i = 2;
-		const filteredItems = saveThread.slice(0, i).concat(saveThread.slice(i + 1, saveThread.length));
+		// const i = 2;
+		// const filteredItems = saveThread.slice(0, i).concat(saveThread.slice(i + 1, saveThread.length));
 
-		console.log(filteredItems);
+		// console.log(filteredItems);
 
 
 		//**TODO: Delete object state by index.
 		const subredditPosts = saveThread.map((key,index)  => {
 			// thread deleting for use `index` for ref.
-			console.log(index);
+			//console.log(index);
 			return(
 				<li key={key.threadObject.id}>
 	            	<button 
 	            		data-url={key.threadObject.url}
 	            		onClick={this.handleThreadClick}
+
+	            		onTouchStart={ () => { this.handleButtonPress(index)}} 
+				        onTouchEnd={ () => { this.handleButtonRelease(index)}} 
+				        onMouseDown={ () => { this.handleButtonPress(index)}} 
+				        onMouseUp={ () => { this.handleButtonRelease(index)}} 
+				        onMouseLeave={ () => { this.handleButtonRelease(index)}}
 	            	>
 	            		{key.threadObject.title}
 	            	</button>
