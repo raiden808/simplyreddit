@@ -190,19 +190,28 @@ class App extends React.Component {
 	//remove saved thread
 	removeSaveThread = index =>{
 
+		// retrieves local storage
+		let getSavedThread   = JSON.parse(localStorage.getItem('savedThread'));
+
+		// retrieves save thread state
 		const SaveThread = this.state.savedThread;
 
+		// delete thread index on click
 		const valueToRemove = index;
 		const filteredItems = SaveThread.filter(function(item,key) {
 			// remove array index via key
 			console.log(key)
 		  return key !== valueToRemove
 		})
+
+		//updates local storage
+	 	localStorage.setItem("savedThread",JSON.stringify(filteredItems));
+
+	 	this.setState({ 
+			savedThread:filteredItems
+		})
+
 	}
-
-	
-
-
 
 	/*
 	* Menu Page Rendering Area
