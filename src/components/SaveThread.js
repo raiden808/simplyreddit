@@ -7,15 +7,15 @@ class SaveThread extends React.Component{
 	}
 
 	// saves activeThreadURL 
-	handleClick = () => {
-
+	handleClick = e => {
+		e.preventDefault();
 		//save thread via props
 		this.props.SaveThread(this.props.singleThreadDetails);
 	}
 
 	render(){
 		return(
-			<a href="#" onClick={()=>{this.handleClick()}} className="smpl_btn read_btn">Save</a>
+			<a href="#" onClick={this.handleClick} className="smpl_btn read_btn">Save</a>
 		);
 	}
 } 
