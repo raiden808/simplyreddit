@@ -105,13 +105,13 @@ class SavedThreads extends React.Component {
 		if(this.state.renderText != ""){
 			renderLayout = 
 				<div>
-					<ReturnThreads handleReturnThread={this.handleReturnThread} />
 					<div className='activeSub'>
 			        	<h3>{this.state.renderText[0].title}</h3>
 			        </div>
 					<div 
 						dangerouslySetInnerHTML={{__html: this.renderSelfText(this.state.renderText[0].selftext_html)}}>
 					</div>
+					<ReturnThreads handleReturnThread={this.handleReturnThread} />
 				</div>
 		} else{
 			renderLayout = 
