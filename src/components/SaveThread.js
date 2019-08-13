@@ -3,6 +3,11 @@ import React from "react";
 class SaveThread extends React.Component{
 	constructor(props){
 		super(props);	
+
+		this.state = {
+			fontColor: ""
+		}
+
 		this.handleClick = this.handleClick.bind(this);
 	}
 
@@ -14,8 +19,11 @@ class SaveThread extends React.Component{
 	}
 
 	render(){
+
+		let bgColor = this.state.fontColor;
+
 		return(
-			<a href="#" onClick={this.handleClick} className="smpl_btn read_btn">Save</a>
+			<a href="#" onClick={this.handleClick} className="smpl_btn read_btn">Read Later</a>
 		);
 	}
 } 
