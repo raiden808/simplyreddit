@@ -5,7 +5,7 @@ class SaveThread extends React.Component{
 		super(props);	
 
 		this.state = {
-			fontColor: ""
+			saveThread: "no"
 		}
 
 		this.handleClick = this.handleClick.bind(this);
@@ -14,16 +14,22 @@ class SaveThread extends React.Component{
 	// saves activeThreadURL 
 	handleClick = e => {
 		e.preventDefault();
+		
 		//save thread via props
 		this.props.SaveThread(this.props.singleThreadDetails);
+
+		this.setState({
+			saveThread:"yes"
+		})
 	}
 
 	render(){
 
-		let bgColor = this.state.fontColor;
+		let btnClass = (this.state.saveThread == "yes") ? "smpl_btn simpl_btn_invert" : "smpl_btn read_btn";
+		let btnText = (this.state.saveThread == "yes") ? "Saved" : "Read Later";
 
 		return(
-			<a href="#" onClick={this.handleClick} className="smpl_btn read_btn">Read Later</a>
+			<a href="#" onClick={this.handleClick} className={btnClass}>{btnText}</a>
 		);
 	}
 } 

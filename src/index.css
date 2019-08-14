@@ -154,6 +154,15 @@ ul.listings {
   outline: none;
 }
 
+/*if button is triggered*/
+.simpl_btn_invert{
+  background: white;
+  color: #282828;
+  pointer-events: none;
+  margin-right: 15px;
+  padding: 0px 11px;
+}
+
 .read_btn{
   margin-right: 15px;
   padding: 0px 11px;
