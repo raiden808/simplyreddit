@@ -83,24 +83,37 @@ class SavedThreads extends React.Component {
 		const saveThread = this.props.savedThread;
 		let   renderLayout = "";
 
-		const subredditPosts = saveThread.map((key,index)  => {
-			return(
-				<li key={key.threadObject.id}>
-	            	<button 
-	            		data-url={key.threadObject.url}
-	            		onClick={this.handleThreadClick}
+		let subredditPosts;
 
-	            		onTouchStart={ () => { this.handleButtonPress(index)}} 
-				        onTouchEnd={ () => { this.handleButtonRelease(index)}} 
-				        onMouseDown={ () => { this.handleButtonPress(index)}} 
-				        onMouseUp={ () => { this.handleButtonRelease(index)}} 
-				        onMouseLeave={ () => { this.handleButtonRelease(index)}}
-	            	>
-	            		{key.threadObject.title}
-	            	</button>
-	            </li>
-			)
-		});
+		if (saveThread.length != 0){
+			subredditPosts = saveThread.map((key,index)  => {
+				return(
+					<li key={key.threadObject.id}>
+		            	<button 
+		            		data-url={key.threadObject.url}
+		            		onClick={this.handleThreadClick}
+
+		            		onTouchStart={ () => { this.handleButtonPress(index)}} 
+					        onTouchEnd={ () => { this.handleButtonRelease(index)}} 
+					        onMouseDown={ () => { this.handleButtonPress(index)}} 
+					        onMouseUp={ () => { this.handleButtonRelease(index)}} 
+					        onMouseLeave={ () => { this.handleButtonRelease(index)}}
+		            	>
+		            		{key.threadObject.title}
+		            	</button>
+		            </li>
+				)
+			});
+		}
+
+		else{
+			subredditPosts  = 
+				<div>
+					<p>No saved thread.</p>
+				</div>
+		}
+
+		
 
 		if(this.state.renderText != ""){
 			renderLayout = 
