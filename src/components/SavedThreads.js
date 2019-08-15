@@ -125,6 +125,7 @@ class SavedThreads extends React.Component {
 						<ul>	
 							{subredditPosts}
 						</ul>
+						<div className='subDesc'><small>Longpress to remove thread.</small></div>
 					</div>
 				</div>;
 		}
