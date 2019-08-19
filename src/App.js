@@ -165,8 +165,6 @@ class App extends React.Component {
 		// save thread object using spread
 		let newThread = [...getSavedThread,threadObject];
 
-
-
 		//updates local storage
 	 	localStorage.setItem("savedThread",JSON.stringify(newThread));
 
