@@ -196,6 +196,8 @@ class App extends React.Component {
 		// retrieves save thread state
 		const SaveThread = this.state.savedThread;
 
+		// spread log
+
 		// delete thread index on click
 		const valueToRemove = index;
 		const filteredItems = SaveThread.filter(function(item,key) {
