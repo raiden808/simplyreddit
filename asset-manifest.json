@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/simplyreddit/static/css/main.9197cce1.chunk.css",
-    "main.js": "/simplyreddit/static/js/main.8cb82c13.chunk.js",
-    "main.js.map": "/simplyreddit/static/js/main.8cb82c13.chunk.js.map",
+    "main.js": "/simplyreddit/static/js/main.0fb31b6e.chunk.js",
+    "main.js.map": "/simplyreddit/static/js/main.0fb31b6e.chunk.js.map",
     "runtime~main.js": "/simplyreddit/static/js/runtime~main.4a34f196.js",
     "runtime~main.js.map": "/simplyreddit/static/js/runtime~main.4a34f196.js.map",
-    "static/js/2.1c803302.chunk.js": "/simplyreddit/static/js/2.1c803302.chunk.js",
-    "static/js/2.1c803302.chunk.js.map": "/simplyreddit/static/js/2.1c803302.chunk.js.map",
+    "static/js/2.55b7fb62.chunk.js": "/simplyreddit/static/js/2.55b7fb62.chunk.js",
+    "static/js/2.55b7fb62.chunk.js.map": "/simplyreddit/static/js/2.55b7fb62.chunk.js.map",
     "index.html": "/simplyreddit/index.html",
-    "precache-manifest.0c81f9dd56ddafb4ab1c4f6c5668b20c.js": "/simplyreddit/precache-manifest.0c81f9dd56ddafb4ab1c4f6c5668b20c.js",
+    "precache-manifest.4e288052fd124cd473f9f225aa89d200.js": "/simplyreddit/precache-manifest.4e288052fd124cd473f9f225aa89d200.js",
     "service-worker.js": "/simplyreddit/service-worker.js",
     "static/css/main.9197cce1.chunk.css.map": "/simplyreddit/static/css/main.9197cce1.chunk.css.map"
   }
