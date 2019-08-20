@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/simplyreddit/static/css/main.9197cce1.chunk.css",
-    "main.js": "/simplyreddit/static/js/main.adc060f5.chunk.js",
-    "main.js.map": "/simplyreddit/static/js/main.adc060f5.chunk.js.map",
+    "main.js": "/simplyreddit/static/js/main.91b6befd.chunk.js",
+    "main.js.map": "/simplyreddit/static/js/main.91b6befd.chunk.js.map",
     "runtime~main.js": "/simplyreddit/static/js/runtime~main.4a34f196.js",
     "runtime~main.js.map": "/simplyreddit/static/js/runtime~main.4a34f196.js.map",
     "static/js/2.55b7fb62.chunk.js": "/simplyreddit/static/js/2.55b7fb62.chunk.js",
     "static/js/2.55b7fb62.chunk.js.map": "/simplyreddit/static/js/2.55b7fb62.chunk.js.map",
     "index.html": "/simplyreddit/index.html",
-    "precache-manifest.5a0b38ca2d448f759ec60247226876a5.js": "/simplyreddit/precache-manifest.5a0b38ca2d448f759ec60247226876a5.js",
+    "precache-manifest.b50df9f33eb469b04c7c77326fd7b866.js": "/simplyreddit/precache-manifest.b50df9f33eb469b04c7c77326fd7b866.js",
     "service-worker.js": "/simplyreddit/service-worker.js",
     "static/css/main.9197cce1.chunk.css.map": "/simplyreddit/static/css/main.9197cce1.chunk.css.map"
   }
