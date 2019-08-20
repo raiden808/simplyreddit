@@ -160,19 +160,27 @@ class App extends React.Component {
 	// save to local storage
 	SaveThread = threadObject =>{
 
-		let getSavedThread = [];
+		// let getSavedThread = [];
 		
-		getSavedThread = [...JSON.parse(localStorage.getItem('savedThread'))];
+		// getSavedThread = [...JSON.parse(localStorage.getItem('savedThread'))];
 
-		// save thread object using spread
-		let newThread = [...getSavedThread,threadObject];
+		let newThread;
+
+		if(this.state.savedThread == null){
+			this.setState({ savedThread:threadObject })
+			newThread = [...threadObject];
+		}else{
+
+			this.setState({ savedThread:[...this.state.savedThread,threadObject] })
+			newThread = [...this.state.savedThread,threadObject]
+		}
+
+		// let
+		// // save thread object using spread
+		// let newThread = [...getSavedThread,threadObject];
 
 		//updates local storage
 	 	localStorage.setItem("savedThread",JSON.stringify(newThread));
-
-		this.setState({ 
-			savedThread:newThread
-		})
 	}
 
 	
