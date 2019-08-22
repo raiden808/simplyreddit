@@ -6,8 +6,8 @@ Inspired by [Redackt](https://github.com/romanparkhomenko/Redackt) and  [MSOutlo
 
 ### Features:
 Simple functionalities:
-- **Search Subreddits** - Search your desired subreddit in the textbox.
-- **Save Subreddits** - Anything you search in the textbox will be saved in the local storage of your browser.
+- **Search Subreddits** - Search your desired subreddit.
+- **Save Subreddits** - Anything you search will be saved in the local storage of your browser.
 - **Read Later** - Save a thread you want to read for later.
 
 ### To-Do List:
