@@ -8,17 +8,20 @@ Inspired by [Redackt](https://github.com/romanparkhomenko/Redackt) and  [MSOutlo
 Simple functionalities:
 - **Search Subreddits** - Search your desired subreddit in the textbox.
 - **Save Subreddits** - Anything you search in the textbox will be saved in the local storage of your browser.
-- **Remove Subreddit** - Longpress the sub you want to remove.
+- **Read Later** - Save a thread you want to read for later.
 
 ### To-Do List:
 - **Missing Comments** - Comments are currently not available
 - **Dark Mode** - Darkmode is still missing
 
 ### Screenshot 1:
-<p align="center"> <img src="https://i.imgur.com/hYGebAI.png"> </p>
+<p align="center"> <img src="https://i.imgur.com/PIj7eAX.png"> </p>
 
 ### Screenshot 2:
-<p align="center"> <img src="https://i.imgur.com/Dt5r0AN.png"> </p>
+<p align="center"> <img src="https://i.imgur.com/JeysfE2.png"> </p>
+
+### Screenshot 3:
+<p align="center"> <img src="https://i.imgur.com/LVrfUWW.png"> </p>
 
 ### Collaborators
 Special thanks to [diazabdulm](https://github.com/diazabdulm) for giving insights and being a mentor.
